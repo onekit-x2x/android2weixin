@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Button": "./ui/Button/Button",
+    "LinearLayout": "./ui/LinearLayout/LinearLayout",
+    "TextView": "./ui/TextView/TextView",
+    "View": "./ui/View/View"
+  }
+}

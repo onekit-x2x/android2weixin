@@ -1,0 +1,6 @@
+function res(key){
+    console.log(key)
+}
+module.exports = {
+    res:res
+}
