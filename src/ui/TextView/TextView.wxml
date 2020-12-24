@@ -1,3 +1,1 @@
-<text>
-<slot/>
-</text>
+<text style="width:{{widthStyle}};height:{{heightStyle}};background:{{backgroundStyle}};">{{text}}</text>

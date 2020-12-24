@@ -1,11 +1,9 @@
-
-/* eslint-disable no-unreachable */
 /* eslint-disable no-useless-computed-key */
-/* eslint-disable key-spacing */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
-import PATH from '../../node_modules/oneutil/PATH'
-import OneKit from '../js/OneKit'
+
+// import PATH from '../../node_modules/oneutil/PATH'
+// import OneKit from '../js/OneKit'
 
 module.exports = Behavior({
 
@@ -14,31 +12,31 @@ module.exports = Behavior({
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['widthStyle']:this._getSize(newValue)})
+        this.setData({['widthStyle']: this._getSize(newValue)})
       }
     },
     layout_height: {
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['heightStyle']:this._getSize(newValue)})
+        this.setData({['heightStyle']: this._getSize(newValue)})
       }
     },
     background: {
       type: String,
       value: 'transparent',
-      observer(newValue) {
-        const backgroundStyle = this._getBackground(newValue)
-        this.setData({['backgroundStyle']:backgroundStyle})
+      observer() { // newValue) {
+        // const backgroundStyle = this._getBackground(newValue)
+        // this.setData({['backgroundStyle']:backgroundStyle})
       }
     }
   },
   lifetimes: {
     attached() {
       this.setData({
-        ['widthStyle']:this._getSize(this.properties.layout_width),
-        ['heightStyle']:this._getSize(this.properties.layout_height),
-        ['backgroundStyle']:this._getBackground(this.properties.background)
+        ['widthStyle']: this._getSize(this.properties.layout_width),
+        ['heightStyle']: this._getSize(this.properties.layout_height)// ,
+        // ['backgroundStyle']:this._getBackground(this.properties.background)
       })
     },
   },
@@ -70,11 +68,28 @@ module.exports = Behavior({
       switch (type) {
         case 'color':
           return key
-        case 'mipmap': {
-          const currentUrl = OneKit.currentUrl
-          const url = PATH.abs2rel(`${currentUrl}`, `/res/mipmap/${key}.png`)
-          console.log(url)
-          return `url(${url})` }
+        case 'mipmap':
+          // const currentUrl = OneKit.currentUrl
+          // const url = PATH.abs2rel(`${currentUrl}`, `/res/mipmap/${key}.js`)
+          return key // `url('${require(url)}')` }
+        case 'drawable':
+          return ''
+        default: throw new Error(`[${type}]${key}`)
+      }
+    },
+
+    _getText(text) {
+      if (!text.startsWith('@')) {
+        return text
+      }
+      const type_key = text.substr(1).split('/')
+      const type = type_key[0]
+      const key = type_key[1]
+      switch (type) {
+        case 'string':
+          // const currentUrl = OneKit.currentUrl
+          // const url = PATH.abs2rel(`${currentUrl}`, `/res/string/${key}.js`)
+          return '' // require(`${url}`)
         case 'drawable':
           return ''
         default: throw new Error(`[${type}]${key}`)
