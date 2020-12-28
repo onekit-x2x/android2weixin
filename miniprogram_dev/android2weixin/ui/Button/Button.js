@@ -126,7 +126,7 @@ module.exports = Behavior({
       observer: function observer(newValue) {
         var _setData;
 
-        this.setData((_setData = {}, _setData['widthStyle'] = this._getSize(newValue), _setData));
+        this.setData((_setData = {}, _setData['width_'] = this._getWidth(newValue), _setData));
       }
     },
     layout_height: {
@@ -135,34 +135,79 @@ module.exports = Behavior({
       observer: function observer(newValue) {
         var _setData2;
 
-        this.setData((_setData2 = {}, _setData2['heightStyle'] = this._getSize(newValue), _setData2));
+        this.setData((_setData2 = {}, _setData2['height_'] = this._getHeight(newValue), _setData2));
+      }
+    },
+    layout_margin: {
+      type: String,
+      value: 'inherit',
+      observer: function observer(newValue) {
+        var _setData3;
+
+        this.setData((_setData3 = {}, _setData3['layout_margin_'] = this._getDimension(newValue), _setData3));
+      }
+    },
+    layout_marginLeft: {
+      type: String,
+      value: 'auto',
+      observer: function observer(newValue) {
+        var _setData4;
+
+        this.setData((_setData4 = {}, _setData4['layout_marginLeft_'] = this._getDimension(newValue), _setData4));
+      }
+    },
+    layout_marginRight: {
+      type: String,
+      value: 'auto',
+      observer: function observer(newValue) {
+        var _setData5;
+
+        this.setData((_setData5 = {}, _setData5['layout_marginRight_'] = this._getDimension(newValue), _setData5));
+      }
+    },
+    layout_marginTop: {
+      type: String,
+      value: 'auto',
+      observer: function observer(newValue) {
+        var _setData6;
+
+        this.setData((_setData6 = {}, _setData6['layout_marginTop_'] = this._getDimension(newValue), _setData6));
+      }
+    },
+    layout_marginBottom: {
+      type: String,
+      value: 'auto',
+      observer: function observer(newValue) {
+        var _setData7;
+
+        this.setData((_setData7 = {}, _setData7['layout_marginBottom_'] = this._getDimension(newValue), _setData7));
       }
     },
     visibility: {
       type: String,
       value: 'visible',
       observer: function observer(newValue) {
-        var _setData3;
+        var _setData8;
 
-        this.setData((_setData3 = {}, _setData3['visibilityStyle'] = this._getVisibility(newValue), _setData3));
+        this.setData((_setData8 = {}, _setData8['visibility_'] = this._getVisibility(newValue), _setData8));
       }
     },
     gravity: {
       type: String,
       observer: function observer(newValue) {
-        var _setData4;
+        var _setData9;
 
-        this.setData((_setData4 = {}, _setData4['gravityStyle'] = this._getGravity(newValue), _setData4));
+        this.setData((_setData9 = {}, _setData9['gravity_'] = this._getGravity(newValue), _setData9));
       }
     },
     background: {
       type: String,
       value: 'transparent',
       observer: function observer(newValue) {
-        var _setData5;
+        var _setData10;
 
-        var backgroundStyle = this._getBackground(newValue);
-        this.setData((_setData5 = {}, _setData5['backgroundStyle'] = backgroundStyle, _setData5));
+        var background_ = this._getBackground(newValue);
+        this.setData((_setData10 = {}, _setData10['background_'] = background_, _setData10));
       }
     },
     text: {
@@ -172,42 +217,60 @@ module.exports = Behavior({
       type: String, value: ''
     },
     textSize: {
-      type: String, value: ''
-    },
-    fontSize: {
       type: String,
-      value: '20dp',
+      value: '14sp',
       observer: function observer(newValue) {
-        var fontSizeStyle = this._getSize(newValue);
-        this.setData({ fontSizeStyle: fontSizeStyle });
+        var _setData11;
+
+        var textSize_ = this._getDimension(newValue);
+        this.setData((_setData11 = {}, _setData11['textSize_'] = textSize_, _setData11));
       }
     }
   },
   lifetimes: {
     attached: function attached() {
-      var _setData6;
+      var _setData12;
 
-      this.setData((_setData6 = {}, _setData6['visibilityStyle'] = this._getVisibility(this.properties.visibility), _setData6['gravityStyle'] = this._getGravity(this.properties.gravity), _setData6['widthStyle'] = this._getSize(this.properties.layout_width), _setData6['heightStyle'] = this._getSize(this.properties.layout_height), _setData6['backgroundStyle'] = this._getBackground(this.properties.background), _setData6));
+      this.setData((_setData12 = {}, _setData12['visibility_'] = this._getVisibility(this.properties.visibility), _setData12['gravity_'] = this._getGravity(this.properties.gravity), _setData12['width_'] = this._getWidth(this.properties.layout_width), _setData12['height_'] = this._getHeight(this.properties.layout_height), _setData12['textSize_'] = this._getDimension(this.properties.textSize), _setData12['layout_margin_'] = this._getDimension(this.properties.layout_margin), _setData12['layout_marginTop_'] = this._getDimension(this.properties.layout_marginTop), _setData12['layout_marginBottom_'] = this._getDimension(this.properties.layout_marginBottom), _setData12['layout_marginLeft_'] = this._getDimension(this.properties.layout_marginLeft), _setData12['layout_marginRight_'] = this._getDimension(this.properties.layout_marginRight), _setData12['background_'] = this._getBackground(this.properties.background), _setData12));
     }
   },
   methods: {
-    _getSize: function _getSize(size) {
+    _getDimension: function _getDimension(dimension) {
+      if (['inherit', 'auto'].includes(dimension)) {
+        return dimension;
+      }
+      if (dimension.endsWith('dp')) {
+        return dimension.replace('dp', 'rpx');
+      } else if (dimension.endsWith('dip')) {
+        return dimension.replace('dip', 'rpx');
+      } else if (dimension.endsWith('sp')) {
+        return dimension.replace('sp', 'px');
+      } else if (dimension.endsWith('px')) {
+        return dimension;
+      } else {
+        throw new Error(dimension);
+      }
+    },
+    _getWidth: function _getWidth(size) {
       switch (size) {
         case 'match_parent':
         case 'fill_parent':
-          return '100%';
+          return '';
         case 'wrap_content':
-          return 'auto';
+          return 'width:auto';
         default:
-          if (size.endsWith('dp')) {
-            return size.replace('dp', 'px');
-          } else if (size.endsWith('dip')) {
-            return size.replace('dip', 'px');
-          } else if (size.endsWith('px')) {
-            return size;
-          } else {
-            throw new Error(size);
-          }
+          return 'width:' + this._getDimension(size);
+      }
+    },
+    _getHeight: function _getHeight(size) {
+      switch (size) {
+        case 'match_parent':
+        case 'fill_parent':
+          return 'height:100%';
+        case 'wrap_content':
+          return 'height:auto';
+        default:
+          return 'height:' + this._getDimension(size);
       }
     },
     _getVisibility: function _getVisibility(visibility) {

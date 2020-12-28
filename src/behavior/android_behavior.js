@@ -11,35 +11,70 @@ module.exports = Behavior({
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['widthStyle']: this._getSize(newValue)})
+        this.setData({['width_']: this._getWidth(newValue)})
       }
     },
     layout_height: {
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['heightStyle']: this._getSize(newValue)})
+        this.setData({['height_']: this._getHeight(newValue)})
+      }
+    },
+    layout_margin: {
+      type: String,
+      value: 'inherit',
+      observer(newValue) {
+        this.setData({['layout_margin_']: this._getDimension(newValue)})
+      }
+    },
+    layout_marginLeft: {
+      type: String,
+      value: 'auto',
+      observer(newValue) {
+        this.setData({['layout_marginLeft_']: this._getDimension(newValue)})
+      }
+    },
+    layout_marginRight: {
+      type: String,
+      value: 'auto',
+      observer(newValue) {
+        this.setData({['layout_marginRight_']: this._getDimension(newValue)})
+      }
+    },
+    layout_marginTop: {
+      type: String,
+      value: 'auto',
+      observer(newValue) {
+        this.setData({['layout_marginTop_']: this._getDimension(newValue)})
+      }
+    },
+    layout_marginBottom: {
+      type: String,
+      value: 'auto',
+      observer(newValue) {
+        this.setData({['layout_marginBottom_']: this._getDimension(newValue)})
       }
     },
     visibility: {
       type: String,
       value: 'visible',
       observer(newValue) {
-        this.setData({['visibilityStyle']: this._getVisibility(newValue)})
+        this.setData({['visibility_']: this._getVisibility(newValue)})
       }
     },
     gravity: {
       type: String,
       observer(newValue) {
-        this.setData({['gravityStyle']: this._getGravity(newValue)})
+        this.setData({['gravity_']: this._getGravity(newValue)})
       }
     },
     background: {
       type: String,
       value: 'transparent',
       observer(newValue) {
-        const backgroundStyle = this._getBackground(newValue)
-        this.setData({['backgroundStyle']: backgroundStyle})
+        const background_ = this._getBackground(newValue)
+        this.setData({['background_']: background_})
       }
     },
     text: {
@@ -49,46 +84,68 @@ module.exports = Behavior({
       type: String, value: ''
     },
     textSize: {
-      type: String, value: ''
-    },
-    fontSize: {
       type: String,
-      value: '20dp',
+      value: '14sp',
       observer(newValue) {
-        const fontSizeStyle = this._getSize(newValue)
-        this.setData({fontSizeStyle})
+        const textSize_ = this._getDimension(newValue)
+        this.setData({['textSize_']: textSize_})
       }
     }
   },
   lifetimes: {
     attached() {
       this.setData({
-        ['visibilityStyle']: this._getVisibility(this.properties.visibility),
-        ['gravityStyle']: this._getGravity(this.properties.gravity),
-        ['widthStyle']: this._getSize(this.properties.layout_width),
-        ['heightStyle']: this._getSize(this.properties.layout_height),
-        ['backgroundStyle']: this._getBackground(this.properties.background)
+        ['visibility_']: this._getVisibility(this.properties.visibility),
+        ['gravity_']: this._getGravity(this.properties.gravity),
+        ['width_']: this._getWidth(this.properties.layout_width),
+        ['height_']: this._getHeight(this.properties.layout_height),
+        ['textSize_']: this._getDimension(this.properties.textSize),
+        ['layout_margin_']: this._getDimension(this.properties.layout_margin),
+        ['layout_marginTop_']: this._getDimension(this.properties.layout_marginTop),
+        ['layout_marginBottom_']: this._getDimension(this.properties.layout_marginBottom),
+        ['layout_marginLeft_']: this._getDimension(this.properties.layout_marginLeft),
+        ['layout_marginRight_']: this._getDimension(this.properties.layout_marginRight),
+        ['background_']: this._getBackground(this.properties.background)
       })
     },
   },
   methods: {
-    _getSize(size) {
+    _getDimension(dimension) {
+      if (['inherit', 'auto'].includes(dimension)) {
+        return dimension
+      }
+      if (dimension.endsWith('dp')) {
+        return dimension.replace('dp', 'rpx')
+      } else if (dimension.endsWith('dip')) {
+        return dimension.replace('dip', 'rpx')
+      } else if (dimension.endsWith('sp')) {
+        return dimension.replace('sp', 'px')
+      } else if (dimension.endsWith('px')) {
+        return dimension
+      } else {
+        throw new Error(dimension)
+      }
+    },
+    _getWidth(size) {
       switch (size) {
         case 'match_parent':
         case 'fill_parent':
-          return '100%'
+          return ''
         case 'wrap_content':
-          return 'auto'
+          return 'width:auto'
         default:
-          if (size.endsWith('dp')) {
-            return size.replace('dp', 'px')
-          } else if (size.endsWith('dip')) {
-            return size.replace('dip', 'px')
-          } else if (size.endsWith('px')) {
-            return size
-          } else {
-            throw new Error(size)
-          }
+          return `width:${this._getDimension(size)}`
+      }
+    },
+    _getHeight(size) {
+      switch (size) {
+        case 'match_parent':
+        case 'fill_parent':
+          return 'height:100%'
+        case 'wrap_content':
+          return 'height:auto'
+        default:
+          return `height:${this._getDimension(size)}`
       }
     },
     _getVisibility(visibility) {

@@ -1,6 +1,14 @@
 page {
     height:100%;
 }
-view,button,text {
-    display:inline-block;
+page,view,button,text {
+    box-sizing: border-box;
+    display: block;
+}
+page:before,view:before,button:before,text:before{
+    content: '';
+    display:table;
+}
+.onekit-button{
+    padding:15rpx;
 }

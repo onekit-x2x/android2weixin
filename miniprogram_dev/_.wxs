@@ -1,6 +1,23 @@
-var _ = function (str){
+var _ = function (str,isDimension){
   if(str.indexOf("@")!=0){
-    return str
+    if(isDimension){
+      if(str==='inherit'){
+        return str
+      }
+      if (str.lastIndexOf('dp')===str.length-'dp'.length) {
+        return str.replace('dp', 'rpx')
+      } else if (str.lastIndexOf('dip')===str.length-'dip'.length) {
+        return str.replace('dip', 'rpx')
+      } else if (str.lastIndexOf('sp')===str.length-'sp'.length) {
+        return str.replace('sp', 'px')
+      } else if (str.lastIndexOf('px')===str.length-'px'.length) {
+        return str
+      } else {
+        throw new Error(str)
+      } 
+    }else{
+      return str
+    }
   }
   str = str.substring(1)
   var libs ={
@@ -37,13 +54,22 @@ var _ = function (str){
             switch(result.shape){
               case "rectangle":
                 if(result.solid){
-                    css+=_(result.solid.color)+";"
+                  var solid = result.solid
+                  if(solid.color){
+                    css+=_(solid.color)+";"
+                  }
+                }
+                if(result.corners){
+                  var corners = result.corners
+                  if(corners.bottomLeftRadius){ css+="border-bottom-left-radius:"+_(corners.bottomLeftRadius,true)+";" }
+                  if(corners.bottomRightRadius){ css+="border-bottom-right-radius:"+_(corners.bottomRightRadius,true)+";" }
+                  if(corners.topLeftRadius){ css+="border-top-left-radius:"+_(corners.topLeftRadius,true)+";" }
+                  if(corners.topRightRadius){ css+="border-top-right-radius:"+_(corners.topRightRadius,true)+";" }
                 }
                 break;
             }
              break;
          }
-         console.log(css)
         return css;
       }
       return result;
