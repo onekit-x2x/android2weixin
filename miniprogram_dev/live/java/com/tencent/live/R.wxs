@@ -1,0 +1,12 @@
+module.exports = {
+  color:{
+    live_main_bg:"#1B1B1B",
+    live_green_bg:"#00A66B",
+    live_bottom_dialog_blue:"#037BFF",
+    live_bottom_dialog_gray:"#8F8F8F",
+    live_title_bg:"#B7B7B7"
+  },
+  string:{
+    
+  }
+}

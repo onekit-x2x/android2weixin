@@ -1,9 +1,8 @@
+/* eslint-disable no-case-declarations */
+/* eslint-disable import/no-dynamic-require */
 /* eslint-disable no-useless-computed-key */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
-
-// import PATH from '../../node_modules/oneutil/PATH'
-// import OneKit from '../js/OneKit'
 
 module.exports = Behavior({
 
@@ -22,21 +21,36 @@ module.exports = Behavior({
         this.setData({['heightStyle']: this._getSize(newValue)})
       }
     },
+    visibility: {
+      type: String,
+      value: 'visible',
+      observer(newValue) {
+        this.setData({['visibilityStyle']: this._getVisibility(newValue)})
+      }
+    },
+    gravity: {
+      type: String,
+      observer(newValue) {
+        this.setData({['gravityStyle']: this._getGravity(newValue)})
+      }
+    },
     background: {
       type: String,
       value: 'transparent',
-      observer() { // newValue) {
-        // const backgroundStyle = this._getBackground(newValue)
-        // this.setData({['backgroundStyle']:backgroundStyle})
+      observer(newValue) {
+        const backgroundStyle = this._getBackground(newValue)
+        this.setData({['backgroundStyle']: backgroundStyle})
       }
     }
   },
   lifetimes: {
     attached() {
       this.setData({
+        ['visibilityStyle']: this._getVisibility(this.properties.visibility),
+        ['gravityStyle']: this._getGravity(this.properties.gravity),
         ['widthStyle']: this._getSize(this.properties.layout_width),
-        ['heightStyle']: this._getSize(this.properties.layout_height)// ,
-        // ['backgroundStyle']:this._getBackground(this.properties.background)
+        ['heightStyle']: this._getSize(this.properties.layout_height),
+        ['backgroundStyle']: this._getBackground(this.properties.background)
       })
     },
   },
@@ -50,7 +64,7 @@ module.exports = Behavior({
           return 'auto'
         default:
           if (size.endsWith('dp')) {
-            return size.replace('dp', 'rpx')
+            return size.replace('dp', 'px')
           } else if (size.endsWith('px')) {
             return size
           } else {
@@ -58,41 +72,43 @@ module.exports = Behavior({
           }
       }
     },
-    _getBackground(background) {
-      if (!background.startsWith('@')) {
-        return background
-      }
-      const type_key = background.substr(1).split('/')
-      const type = type_key[0]
-      const key = type_key[1]
-      switch (type) {
-        case 'color':
-          return key
-        case 'mipmap':
-          // const currentUrl = OneKit.currentUrl
-          // const url = PATH.abs2rel(`${currentUrl}`, `/res/mipmap/${key}.js`)
-          return key // `url('${require(url)}')` }
-        case 'drawable':
+    _getVisibility(visibility) {
+      switch (visibility) {
+        case 'gone':
+          return 'display:none !important;'
+        case 'visible':
           return ''
-        default: throw new Error(`[${type}]${key}`)
+        case 'invisible':
+          return 'visibility:hidden;'
+        default:
+          throw new Error(visibility)
       }
     },
-
-    _getText(text) {
-      if (!text.startsWith('@')) {
-        return text
+    _getGravity(gravity) {
+      if (!gravity) {
+        return ''
       }
-      const type_key = text.substr(1).split('/')
-      const type = type_key[0]
-      const key = type_key[1]
-      switch (type) {
-        case 'string':
-          // const currentUrl = OneKit.currentUrl
-          // const url = PATH.abs2rel(`${currentUrl}`, `/res/string/${key}.js`)
-          return '' // require(`${url}`)
-        case 'drawable':
-          return ''
-        default: throw new Error(`[${type}]${key}`)
+      let result = ''
+      const gravitys = gravity.split('|')
+      for (const gvt of gravitys) {
+        switch (gvt) {
+          case 'center':
+            result += 'text-align:center;vertical-align:middule;'
+            break
+          case 'center_horizontal':
+            result += 'text-align:center;'
+            break
+          default:
+            throw new Error(gvt)
+        }
+      }
+      return result
+    },
+    _getBackground(background) {
+      if (background.startsWith('data:')) {
+        return `url(${background}) background-size:100% 100%`
+      } else {
+        return background
       }
     },
     ui_tap() {

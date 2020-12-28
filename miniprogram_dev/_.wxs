@@ -1,0 +1,33 @@
+module.exports = function(str){
+  var libs ={
+    android:require("android2weixin/java/android/R.wxs")
+  }
+  var projects = [
+    require("java/com/tencent/trtcsimpledemo/R.wxs"),
+    require("customcapture/java/com/tencent/custom/R.wxs"),
+    require("live/java/com/tencent/lite/R.wxs")
+  ]
+  
+  var lib
+  var p = str.indexOf(":")
+  if(p>=0){
+    lib = str.substring(0,p)
+    str = str.substring(p+1)
+  }
+  var type_key = str.split("/")
+  var type = type_key[0]
+  if(type==='id' || type==='+id' ){
+    return key
+  }
+  var key = type_key[1]
+  if(lib){
+    return libs[lib][type][key]
+  }else{
+  for(var r=0 ; r<projects.length;r++){
+    var result = projects[r][type][key]
+    if(result){
+      return result;
+    }
+  }
+  }
+}

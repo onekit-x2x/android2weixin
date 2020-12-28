@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "java/com/tencent/trtcsimpledemo/MainActivity"
+  ],
+  "usingComponents": {
+    "onekit-Button":"/android2weixin/ui/Button/Button",
+    "onekit-LinearLayout":"/android2weixin/ui/LinearLayout/LinearLayout",
+    "onekit-TextView":"/android2weixin/ui/TextView/TextView",
+    "onekit-View":"/android2weixin/ui/View/View"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -12,4 +12,3 @@ miniprogram_dist
 node_modules/
 coverage
 .DS_Store
-miniprogram_dev/
