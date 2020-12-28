@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-export default function AppCompatActivity() {
+export default function () {
   const wx_object = {
     onLoad() {
     }

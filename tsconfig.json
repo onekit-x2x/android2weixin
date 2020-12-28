@@ -9,5 +9,5 @@
         "sourceMap": true,
         "allowSyntheticDefaultImports": true
     },
-    "include": ["src/**/*.ts", "node_modules/miniprogram-api-typings/index.d.ts"]
+    "include": ["src/**/*.ts", "node_modules/miniprogram-api-typings/index.d.ts", "src/java/androidx/appcompat/app/index.js", "src/java/androidx/appcompat/index.js", "src/java/index.js"]
 }
