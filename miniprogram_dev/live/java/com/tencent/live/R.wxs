@@ -7,6 +7,6 @@ module.exports = {
     live_title_bg:"#B7B7B7"
   },
   string:{
-    
+    app_name:"live"
   }
 }

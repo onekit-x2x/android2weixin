@@ -1,3 +1,3 @@
 <button 
-    style="{{visibilityStyle}}{{gravityStyle}}width:{{widthStyle}};height:{{heightStyle}};background:{{backgroundStyle}};"
+    style="{{visibilityStyle}}{{gravityStyle}}width:{{widthStyle}};height:{{heightStyle}};background:{{backgroundStyle}};color:{{textColor}};font-size:{{fontSizeStyle}}"
     >{{text}}</button>

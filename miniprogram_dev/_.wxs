@@ -1,11 +1,15 @@
-module.exports = function(str){
+var _ = function (str){
+  if(str.indexOf("@")!=0){
+    return str
+  }
+  str = str.substring(1)
   var libs ={
     android:require("android2weixin/java/android/R.wxs")
   }
   var projects = [
     require("java/com/tencent/trtcsimpledemo/R.wxs"),
     require("customcapture/java/com/tencent/custom/R.wxs"),
-    require("live/java/com/tencent/lite/R.wxs")
+    require("live/java/com/tencent/live/R.wxs")
   ]
   
   var lib
@@ -26,8 +30,25 @@ module.exports = function(str){
   for(var r=0 ; r<projects.length;r++){
     var result = projects[r][type][key]
     if(result){
+      if(type==="drawable"){
+         var css = "";
+         switch(result.type){
+           case "shape":
+            switch(result.shape){
+              case "rectangle":
+                if(result.solid){
+                    css+=_(result.solid.color)+";"
+                }
+                break;
+            }
+             break;
+         }
+         console.log(css)
+        return css;
+      }
       return result;
     }
   }
   }
 }
+module.exports = _;

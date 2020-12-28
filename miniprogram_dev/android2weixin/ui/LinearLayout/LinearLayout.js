@@ -164,6 +164,23 @@ module.exports = Behavior({
         var backgroundStyle = this._getBackground(newValue);
         this.setData((_setData5 = {}, _setData5['backgroundStyle'] = backgroundStyle, _setData5));
       }
+    },
+    text: {
+      type: String, value: ''
+    },
+    textColor: {
+      type: String, value: ''
+    },
+    textSize: {
+      type: String, value: ''
+    },
+    fontSize: {
+      type: String,
+      value: '20dp',
+      observer: function observer(newValue) {
+        var fontSizeStyle = this._getSize(newValue);
+        this.setData({ fontSizeStyle: fontSizeStyle });
+      }
     }
   },
   lifetimes: {
@@ -184,6 +201,8 @@ module.exports = Behavior({
         default:
           if (size.endsWith('dp')) {
             return size.replace('dp', 'px');
+          } else if (size.endsWith('dip')) {
+            return size.replace('dip', 'px');
           } else if (size.endsWith('px')) {
             return size;
           } else {
