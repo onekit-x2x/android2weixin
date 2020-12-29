@@ -1,6 +1,9 @@
+import {OnekitPage} from '../../../../android2weixin/index'
+import AppCompatActivity from '../../../../android2weixin/java/androidx/appcompat/app/AppCompatActivity'
 import R from './R.js'
-AppCompatActivity({
-  onLoad(){
+
+class MainActivity {
+     onCreate( savedInstanceState) {
     /*
     new Handler().postDelayed(new Runnable() {
       @Override
@@ -33,4 +36,5 @@ AppCompatActivity({
       }
   });
   }
-})
+}
+OnekitPage(new MainActivity());

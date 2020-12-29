@@ -1,20 +1,25 @@
-console.log(process.cwd())
 const fs = require('fs-extra')
 const path = require('path')
-const { exec } = require('child_process');
 
+const out = `${process.argv.splice(2)[0]}/android2weixin`
 const cwd = process.cwd()
-const root = 'miniprogram_npm'
-const dist = 'miniprogram_dist'
-/*
-const list = fs.readdirSync(path.join(cwd, dist))
-fs.removeSync(root)
-list.forEach(file => {
-    const stat = fs.lstatSync(path.join(cwd, dist, file))
-    if (stat.isDirectory() && file !== 'weui-wxss') {
-        const npmDist =  path.join(cwd, root, file, dist)
-        fs.ensureDirSync(npmDist)
-        exec(`cp -a ${dist}/${file}/* ${root}/${file}/${dist}`)
-        exec(`cp -a src/${file}/package.json ${root}/${file}/package.json`)
+
+function copy(folder){
+    if(!fs.existsSync(path.join(cwd, out,folder))){
+        fs.mkdirSync( path.join(cwd, out,folder))
     }
-})*/
+    const list = fs.readdirSync(path.join(cwd, 'src',folder))
+    list.forEach(file => {
+        const uri = `${folder}/${file}`
+        const stat = fs.lstatSync(path.join(cwd, 'src', uri))
+        if (stat.isDirectory()){
+            copy(uri)
+        } else if(file.endsWith('.js') ||file.endsWith('.wxs')  ){
+            const readable = fs.createReadStream( `${cwd}/src/${uri}` );
+            const writable = fs.createWriteStream( `${cwd}/${out}/${uri}` ); 
+            readable.pipe( writable );  
+        }
+    })
+}
+copy('java')
+copy('js')

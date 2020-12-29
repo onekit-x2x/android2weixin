@@ -94,9 +94,9 @@ module.exports =
 
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppCompatActivity = void 0;
-var AppCompatActivity_1 = __webpack_require__(7);
-exports.AppCompatActivity = AppCompatActivity_1.default;
+exports.OnekitPage = void 0;
+var OnekitPage_1 = __webpack_require__(7);
+exports.OnekitPage = OnekitPage_1.default;
 
 /***/ }),
 
@@ -107,14 +107,10 @@ exports.AppCompatActivity = AppCompatActivity_1.default;
 
 
 exports.__esModule = true;
-exports.default = AppCompatActivity;
-/* eslint-disable camelcase */
-function AppCompatActivity() {
-  var wx_object = {
-    onLoad: function onLoad() {}
-  };
-  Page(wx_object);
-}
+
+exports.default = function () {
+  Page({});
+};
 
 /***/ })
 
