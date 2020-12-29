@@ -44,7 +44,4 @@ class MainActivity extends AppCompatActivity{
 })
     }
 }
-
-
-Page({})
-//OnekitPage(new MainActivity());
+OnekitPage(new MainActivity());
