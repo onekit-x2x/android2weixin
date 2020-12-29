@@ -25,8 +25,8 @@ var _ = function (str,isDimension){
   }
   var projects = [
     require("java/com/tencent/trtcsimpledemo/R.wxs"),
-    require("customcapture/java/com/tencent/custom/R.wxs"),
-    require("live/java/com/tencent/live/R.wxs")
+    require("java/com/tencent/custom/R.wxs"),
+    require("java/com/tencent/live/R.wxs")
   ]
   
   var lib
