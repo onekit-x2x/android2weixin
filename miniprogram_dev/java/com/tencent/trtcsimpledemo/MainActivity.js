@@ -1,4 +1,5 @@
 import {OnekitPage} from '../../../../android2weixin/index';
+import R from './R';
 import Intent from "../../../../android2weixin/java/android/content/Intent"
 import Bundle from "../../../../android2weixin/java/android/os/Bundle"
 import Handler from "../../../../android2weixin/java/android/os/Handler"

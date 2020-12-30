@@ -108,9 +108,55 @@ exports.OnekitPage = OnekitPage_1.default;
 
 exports.__esModule = true;
 
-exports.default = function () {
-  Page({});
+exports.default = function (adr_activity) {
+  var wx_object = {
+    onLoad: function onLoad() {
+      if (adr_activity.onCreate) {
+        adr_activity.onCreate(new _Bundle2.default());
+      }
+    },
+    onReady: function onReady() {
+      if (adr_activity.onReady) {
+        adr_activity.onReady();
+      }
+    },
+    onShow: function onShow() {
+      if (adr_activity.onResume) {
+        adr_activity.onResume();
+      }
+    },
+    onHide: function onHide() {
+      if (adr_activity.onHide) {
+        adr_activity.onHide();
+      }
+    }
+  };
+  Page(wx_object);
 };
+
+var _Bundle = __webpack_require__(8);
+
+var _Bundle2 = _interopRequireDefault(_Bundle);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bundle = function Bundle() {
+  _classCallCheck(this, Bundle);
+};
+
+exports.default = Bundle;
 
 /***/ })
 
