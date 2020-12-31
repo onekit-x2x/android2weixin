@@ -132,7 +132,7 @@ module.exports = Behavior({
 /* eslint-disable camelcase */
 
 module.exports = Behavior({
-
+  data: {},
   properties: {
     layout_width: {
       type: String,
@@ -340,7 +340,10 @@ module.exports = Behavior({
       }
     },
     ui_tap: function ui_tap() {
-      this.triggerEvent('Tap');
+      if (this.clickListener) {
+        this.clickListener.onClick(this);
+      }
+      this.triggerEvent('Click', this);
     },
     ui_touchstart: function ui_touchstart() {
       this.triggerEvent('Touchstart');
@@ -360,7 +363,9 @@ module.exports = Behavior({
     ui_longtap: function ui_longtap() {
       this.triggerEvent('Longtap');
     },
-    setOnClickListener: function setOnClickListener() {},
+    setOnClickListener: function setOnClickListener(clickListener) {
+      this.clickListener = clickListener;
+    },
     setVisibility: function setVisibility() {}
   }
 });

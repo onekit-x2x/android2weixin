@@ -1,4 +1,5 @@
 <view id="{{onekitId}}"
+    bindtap="ui_tap"
     style="{{visibility_}}{{gravity_}}width:{{width_}};{{height_}};margin:{{layout_margin_}};margin:{{layout_marginTop_}} {{layout_marginRight_}} {{layout_marginBottom_}} {{layout_marginLeft_}};background:{{background_}};"
     >
 <slot/>
