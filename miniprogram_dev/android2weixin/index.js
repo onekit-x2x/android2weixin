@@ -111,6 +111,7 @@ exports.__esModule = true;
 exports.default = function (adr_activity) {
   var wx_object = {
     onLoad: function onLoad() {
+      adr_activity.PAGE = this;
       if (adr_activity.onCreate) {
         adr_activity.onCreate(new _Bundle2.default());
       }
