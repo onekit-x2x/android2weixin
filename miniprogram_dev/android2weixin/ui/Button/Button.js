@@ -92,6 +92,7 @@ module.exports =
 "use strict";
 
 
+/* eslint-disable no-console */
 module.exports = Behavior({
 
   properties: {
@@ -101,7 +102,20 @@ module.exports = Behavior({
     onekitId: {
       type: String, value: ''
     }
+  },
+  lifetimes: {
+    attached: function attached() {
+      if (!getApp().onekit_ui) {
+        getApp().onekit_ui = {};
+      }
+      // console.log(this.data.onekitId)
+      getApp().onekit_ui[this.data.onekitId] = this;
+    },
+    detached: function detached() {
+      getApp().onekit_ui[this.data.onekitId] = null;
+    }
   }
+
 });
 
 /***/ }),
@@ -345,7 +359,9 @@ module.exports = Behavior({
     },
     ui_longtap: function ui_longtap() {
       this.triggerEvent('Longtap');
-    }
+    },
+    setOnClickListener: function setOnClickListener() {},
+    setVisibility: function setVisibility() {}
   }
 });
 

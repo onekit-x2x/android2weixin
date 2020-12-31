@@ -208,5 +208,9 @@ module.exports = Behavior({
     ui_longtap() {
       this.triggerEvent('Longtap')
     },
+    setOnClickListener() {
+    },
+    setVisibility() {
+    }
   },
 })
