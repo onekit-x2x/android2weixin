@@ -1,5 +1,8 @@
 export default class Handler {
-    postDelayed(){
-        
-    }
+  // eslint-disable-next-line class-methods-use-this
+  postDelayed(runnable) {
+    setTimeout(() => {
+      runnable.run()
+    })
+  }
 }

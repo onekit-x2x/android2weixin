@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "oneutil": "latest"
+    "oneutil": "^2.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",

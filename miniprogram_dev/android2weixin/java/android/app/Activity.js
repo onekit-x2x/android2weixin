@@ -1,11 +1,28 @@
+/* eslint-disable no-console */
+/* eslint-disable class-methods-use-this */
 export default class Activity {
-  // eslint-disable-next-line class-methods-use-this
   onCreate() {
 
   }
 
-  // eslint-disable-next-line class-methods-use-this
   setContentView() {
 
+  }
+
+  findViewById(id) {
+    // let context
+    // await new Promise((resolve) => {
+    wx.createSelectorQuery().select(`#${id}`).context(function (res) {
+      console.log('context', res)
+    }).exec((res) => {
+      console.log('exec', res)
+    })
+    return {
+      setOnClickListener() {
+      },
+      setVisibility() {
+
+      }
+    }
   }
 }

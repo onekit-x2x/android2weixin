@@ -15,30 +15,30 @@ class MainActivity extends AppCompatActivity{
         this.setContentView(R.layout.activity_main)
         this.getSupportActionBar().hide()
         new Handler().postDelayed({
-    run(){
+    run:()=>{
         this.findViewById(R.id.launch_view).setVisibility(View.GONE)
     }
 },1000)
         this.findViewById(R.id.bt_rtc).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         var intent = new Intent(this,RTCEntranceActivity.class)
         this.startActivity(intent)
     }
 })
         this.findViewById(R.id.bt_live).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         var intent = new Intent(this,LiveRoomListActivity.class)
         this.startActivity(intent)
     }
 })
         this.findViewById(R.id.bt_screen).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         var intent = new Intent(this,ScreenEntranceActivity.class)
         this.startActivity(intent)
     }
 })
         this.findViewById(R.id.bt_custom_capture).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         var intent = new Intent(this,CustomEntranceActivity.class)
         this.startActivity(intent)
     }

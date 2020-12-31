@@ -3,7 +3,7 @@
 <onekit-LinearLayout layout_width="match_parent" layout_height="match_parent" background="{{_('@color/live_main_bg')}}" orientation="vertical">
 
 
-<onekit-View id="{{_('@+id/launch_view')}}" layout_width="match_parent" layout_height="match_parent" background="{{_('@mipmap/ic_launch_image')}}" visibility="gone"></onekit-View>
+<onekit-View onekit-id="{{_('@+id/launch_view')}}" layout_width="match_parent" layout_height="match_parent" background="{{_('@mipmap/ic_launch_image')}}" visibility="gone"></onekit-View>
 
 
 <onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content">
@@ -15,13 +15,13 @@
 <onekit-TextView layout_width="match_parent" layout_height="wrap_content" layout_margin="30dp" gravity="center" text="{{_('@string/main_trtc_title')}}" textColor="{{_('@color/live_green_bg')}}" textSize="36sp"></onekit-TextView>
 
 
-<onekit-Button id="{{_('@+id/bt_rtc')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_trtc')}}" textColor="{{_('@android:color/white')}}"></onekit-Button>
+<onekit-Button onekit-id="{{_('@+id/bt_rtc')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_trtc')}}" textColor="{{_('@android:color/white')}}"></onekit-Button>
 
-<onekit-Button id="{{_('@+id/bt_live')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_live')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
+<onekit-Button onekit-id="{{_('@+id/bt_live')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_live')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
 
 
-<onekit-Button id="{{_('@+id/bt_screen')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_screen')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
+<onekit-Button onekit-id="{{_('@+id/bt_screen')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_screen')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
 
-<onekit-Button id="{{_('@+id/bt_custom_capture')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_custom_capture')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
+<onekit-Button onekit-id="{{_('@+id/bt_custom_capture')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginRight="60dp" layout_marginBottom="60dp" background="{{_('@drawable/button_bg')}}" text="{{_('@string/main_item_custom_capture')}}" textAllCaps="false" textColor="{{_('@android:color/white')}}"></onekit-Button>
 </onekit-LinearLayout>
                             
