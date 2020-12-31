@@ -1,3 +1,12 @@
+
+  var libs ={
+    android:require("android2weixin/java/android/R.wxs")
+  }
+  var projects = [
+    require("java/com/tencent/trtcsimpledemo/R.wxs"),
+    require("java/com/tencent/custom/R.wxs"),
+    require("java/com/tencent/live/R.wxs")
+  ]
 var _ = function (str,isDimension){
   if(str.indexOf("@")!=0){
     if(isDimension){
@@ -20,14 +29,6 @@ var _ = function (str,isDimension){
     }
   }
   str = str.substring(1)
-  var libs ={
-    android:require("android2weixin/java/android/R.wxs")
-  }
-  var projects = [
-    require("java/com/tencent/trtcsimpledemo/R.wxs"),
-    require("java/com/tencent/custom/R.wxs"),
-    require("java/com/tencent/live/R.wxs")
-  ]
   
   var lib
   var p = str.indexOf(":")
@@ -37,10 +38,10 @@ var _ = function (str,isDimension){
   }
   var type_key = str.split("/")
   var type = type_key[0]
-  if(type==='id' || type==='+id' ){
+  var key = type_key[1]
+  if(type==='id' || type==='+id' || type==='layout' ){
     return key
   }
-  var key = type_key[1]
   if(lib){
     return libs[lib][type][key]
   }else{
