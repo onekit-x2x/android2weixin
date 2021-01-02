@@ -1,10 +1,9 @@
 /* eslint-disable no-useless-computed-key */
 /* eslint-disable camelcase */
-import onekit_behavior from '../../behavior/onekit_behavior'
 import android_behavior from '../../behavior/android_behavior'
 
 Component({
-  behaviors: [onekit_behavior, android_behavior],
+  behaviors: [android_behavior],
   options: {
     virtualHost: true
   },

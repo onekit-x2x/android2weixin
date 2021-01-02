@@ -113,23 +113,29 @@ exports.default = Bundle;
 
 exports.__esModule = true;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* eslint-disable no-console */
-/* eslint-disable class-methods-use-this */
+var _Any2 = __webpack_require__(16);
 
-
-var _oneutil = __webpack_require__(16);
-
-var _OneKit = __webpack_require__(17);
-
-var _OneKit2 = _interopRequireDefault(_OneKit);
+var _Any3 = _interopRequireDefault(_Any2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Activity = function () {
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-console */
+/* eslint-disable class-methods-use-this */
+// import {PATH} from 'oneutil'
+// import OneKit from '../../js/OneKit'
+
+
+var Activity = function (_Any) {
+  _inherits(Activity, _Any);
+
   function Activity() {
     _classCallCheck(this, Activity);
+
+    return _possibleConstructorReturn(this, _Any.apply(this, arguments));
   }
 
   Activity.prototype.onCreate = function onCreate() {};
@@ -141,19 +147,12 @@ var Activity = function () {
   };
 
   Activity.prototype.startActivity = function startActivity(intent) {
-    var url = _oneutil.PATH.rel2abs(_OneKit2.default.currentUrl, intent.newActivityClass.replace('$$', '/'));
-    console.log(url);
+    console.log(intent._newActivityClass);
+    // const url = PATH.rel2abs(OneKit.currentUrl, intent._newActivityClass.replace('$$', '/'))
   };
 
-  _createClass(Activity, null, [{
-    key: 'class',
-    get: function get() {
-      return this.name;
-    }
-  }]);
-
   return Activity;
-}();
+}(_Any3.default);
 
 exports.default = Activity;
 
@@ -305,7 +304,7 @@ var _android = __webpack_require__(14);
 
 var _android2 = _interopRequireDefault(_android);
 
-var _androidx = __webpack_require__(24);
+var _androidx = __webpack_require__(23);
 
 var _androidx2 = _interopRequireDefault(_androidx);
 
@@ -370,15 +369,15 @@ var _app = __webpack_require__(15);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _content = __webpack_require__(18);
+var _content = __webpack_require__(17);
 
 var _content2 = _interopRequireDefault(_content);
 
-var _os = __webpack_require__(20);
+var _os = __webpack_require__(19);
 
 var _os2 = _interopRequireDefault(_os);
 
-var _view = __webpack_require__(22);
+var _view = __webpack_require__(21);
 
 var _view2 = _interopRequireDefault(_view);
 
@@ -407,12 +406,6 @@ module.exports = {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
-
-module.exports = require("oneutil");
-
-/***/ }),
-/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -424,81 +417,31 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/* eslint-disable no-console */
-/* eslint-disable max-len */
-/* eslint-disable camelcase */
-var ADR_USER_FOLDER = 'ttfile://user/';
-var WX_USER_FOLDER = wx.env.USER_DATA_PATH + '/';
-
-var OneKit = function () {
-  function OneKit() {
-    _classCallCheck(this, OneKit);
+var Any = function () {
+  function Any() {
+    _classCallCheck(this, Any);
   }
 
-  OneKit.new_tt_filePath = function new_tt_filePath(ext) {
-    var randomString = Math.floor(Math.random() * (1 - 10000000) + 10000000);
-    var tt_filePath = '' + ADR_USER_FOLDER + randomString + ext;
-    return tt_filePath;
-  };
-
-  OneKit.tt_filePath2wx_filePath = function tt_filePath2wx_filePath(tt_filePath) {
-    if (!getApp().ttSavePath2wxStorePath) {
-      return tt_filePath;
-    }
-
-    var wx_storePath = getApp().ttSavePath2wxStorePath[tt_filePath];
-    if (wx_storePath) {
-      return wx_storePath;
-    } else {
-      var wx_filePath = tt_filePath.replace(ADR_USER_FOLDER, WX_USER_FOLDER);
-      return wx_filePath;
-    }
-  };
-
-  OneKit.save_wx_storePath = function save_wx_storePath(tt_filePath, wx_storePath) {
-    if (!getApp().ttSavePath2wxStorePath) {
-      getApp().ttSavePath2wxStorePath = {};
-    }
-
-    getApp().ttSavePath2wxStorePath[tt_filePath] = wx_storePath;
-    // ///////////////////////
-
-    if (!getApp().wxStorePath2ttSavePath) {
-      getApp().wxStorePath2ttSavePath = {};
-    }
-
-    getApp().wxStorePath2ttSavePath[wx_storePath] = tt_filePath;
-  };
-
-  _createClass(OneKit, null, [{
-    key: 'current',
+  _createClass(Any, null, [{
+    key: "class",
     get: function get() {
-      var pages = getCurrentPages();
-      if (pages.length === 0) {
-        return {};
-      }
-      return pages[pages.length - 1];
-    }
-  }, {
-    key: 'currentUrl',
-    get: function get() {
-      return this.current.route;
+      return this.name;
     }
   }]);
 
-  return OneKit;
+  return Any;
 }();
 
-exports.default = OneKit;
+exports.default = Any;
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Intent = __webpack_require__(19);
+var _Intent = __webpack_require__(18);
 
 var _Intent2 = _interopRequireDefault(_Intent);
 
@@ -509,7 +452,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -530,7 +473,7 @@ var Intent = function Intent(currentActivity, newActivityClass) {
 exports.default = Intent;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -540,7 +483,7 @@ var _Bundle = __webpack_require__(2);
 
 var _Bundle2 = _interopRequireDefault(_Bundle);
 
-var _Handler = __webpack_require__(21);
+var _Handler = __webpack_require__(20);
 
 var _Handler2 = _interopRequireDefault(_Handler);
 
@@ -552,7 +495,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -580,13 +523,13 @@ var Handler = function () {
 exports.default = Handler;
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _View = __webpack_require__(23);
+var _View = __webpack_require__(22);
 
 var _View2 = _interopRequireDefault(_View);
 
@@ -597,7 +540,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -614,25 +557,25 @@ var View = function View() {
 exports.default = View;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _activity = __webpack_require__(25);
+var _activity = __webpack_require__(24);
 
 var _activity2 = _interopRequireDefault(_activity);
 
-var _appcompat = __webpack_require__(26);
+var _appcompat = __webpack_require__(25);
 
 var _appcompat2 = _interopRequireDefault(_appcompat);
 
-var _core = __webpack_require__(29);
+var _core = __webpack_require__(28);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _fragment = __webpack_require__(31);
+var _fragment = __webpack_require__(30);
 
 var _fragment2 = _interopRequireDefault(_fragment);
 
@@ -643,7 +586,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -660,13 +603,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(27);
+var _app = __webpack_require__(26);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -677,7 +620,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -687,7 +630,7 @@ var _ActionBar = __webpack_require__(6);
 
 var _ActionBar2 = _interopRequireDefault(_ActionBar);
 
-var _AppCompatActivity = __webpack_require__(28);
+var _AppCompatActivity = __webpack_require__(27);
 
 var _AppCompatActivity2 = _interopRequireDefault(_AppCompatActivity);
 
@@ -699,7 +642,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -744,13 +687,13 @@ var AppCompatActivity = function (_FragmentActivity) {
 exports.default = AppCompatActivity;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(30);
+var _app = __webpack_require__(29);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -761,7 +704,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -779,13 +722,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.ComponentActivity = _ComponentActivity2.default;
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(32);
+var _app = __webpack_require__(31);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -796,7 +739,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 32 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

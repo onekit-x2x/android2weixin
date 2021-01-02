@@ -14,11 +14,14 @@ module.exports = Behavior({
       if (!getApp().onekit_ui) {
         getApp().onekit_ui = {}
       }
-      // console.log(this.data.onekitId)
-      getApp().onekit_ui[this.data.onekitId] = this
+      if (this.data.onekitId) {
+        getApp().onekit_ui[this.data.onekitId] = this
+      }
     },
     detached() {
-      getApp().onekit_ui[this.data.onekitId] = null
+      if (this.data.onekitId) {
+        getApp().onekit_ui[this.data.onekitId] = null
+      }
     }
   }
 

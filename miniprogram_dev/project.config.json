@@ -1,67 +1,65 @@
 {
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "enhance": false,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": true,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.11.3",
-  "appid": "wxecb5d25a4a5c222f",
-  "projectname": "小程序拓展组件库",
-  "isGameTourist": false,
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "example/video-swiper/video-swiper",
-          "pathName": "example/video-swiper/video-swiper"
-        },
-        {
-          "id": -2,
-          "name": "example/emoji/emoji",
-          "pathName": "example/emoji/emoji"
-        },
-        {
-          "id": -3,
-          "name": "example/index-list/index-list",
-          "pathName": "example/index-list/index-list"
-        }
-      ]
-    }
+	"description": "项目配置文件。",
+	"packOptions": {
+	  "ignore": []
+	},
+	"setting": {
+	  "urlCheck": false,
+	  "es6": true,
+	  "enhance": false,
+	  "postcss": true,
+	  "preloadBackgroundData": false,
+	  "minified": true,
+	  "newFeature": true,
+	  "coverView": true,
+	  "nodeModules": true,
+	  "autoAudits": false,
+	  "showShadowRootInWxmlPanel": true,
+	  "scopeDataCheck": false,
+	  "uglifyFileName": false,
+	  "checkInvalidKey": true,
+	  "checkSiteMap": true,
+	  "uploadWithSourceMap": true,
+	  "compileHotReLoad": false,
+	  "useMultiFrameRuntime": false,
+	  "useApiHook": true,
+	  "babelSetting": {
+		"ignore": [],
+		"disablePlugins": [],
+		"outputPath": ""
+	  },
+	  "enableEngineNative": false,
+	  "useIsolateContext": true,
+	  "useCompilerModule": true,
+	  "userConfirmedUseCompilerModuleSwitch": false,
+	  "packNpmManually": false,
+	  "packNpmRelationList": [],
+	  "minifyWXSS": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.3",
+	"appid": "wxecb5d25a4a5c222f",
+	"projectname": "小程序拓展组件库",
+	"isGameTourist": false,
+	"condition": {
+	  "miniprogram": {
+		"list": [
+		  {
+			"id": -1,
+			"name": "example/video-swiper/video-swiper",
+			"pathName": "example/video-swiper/video-swiper"
+		  },
+		  {
+			"id": -2,
+			"name": "example/emoji/emoji",
+			"pathName": "example/emoji/emoji"
+		  },
+		  {
+			"id": -3,
+			"name": "example/index-list/index-list",
+			"pathName": "example/index-list/index-list"
+		  }
+		]
+	  }
+	}
   }
-}

@@ -4,7 +4,10 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 
+import onekit_behavior from './onekit_behavior'
+
 module.exports = Behavior({
+  behaviors: [onekit_behavior],
   data: {},
   properties: {
     layout_width: {

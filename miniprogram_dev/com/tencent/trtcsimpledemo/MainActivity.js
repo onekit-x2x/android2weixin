@@ -1,6 +1,5 @@
-import {OnekitPage} from '../../../android2weixin';
-import R from './R';
-import {android,androidx,com} from '../../../android2weixin';
+import {OnekitPage} from '../../../index';
+import {android,androidx,com} from '../../../index';
 const Intent = android.content.Intent;
 const Bundle = android.os.Bundle;
 const Handler = android.os.Handler;
@@ -10,9 +9,11 @@ const CustomEntranceActivity = com.tencent.custom.CustomEntranceActivity;
 const ScreenEntranceActivity = com.tencent.liteav.screen.ScreenEntranceActivity;
 const LiveRoomListActivity = com.tencent.live.LiveRoomListActivity;
 const RTCEntranceActivity = com.tencent.rtc.RTCEntranceActivity;
+const R = com.tencent.trtcsimpledemo.R;
 
-class MainActivity extends AppCompatActivity{
+export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
+        console.log(com)
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
         this.getSupportActionBar().hide()
@@ -23,7 +24,6 @@ class MainActivity extends AppCompatActivity{
 },1000)
         this.findViewById(R.id.bt_rtc).setOnClickListener({
     onClick:(view )=>{
-        console.log("bt_rtc",view)
         var intent = new Intent(this,RTCEntranceActivity.class)
         this.startActivity(intent)
     }

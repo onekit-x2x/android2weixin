@@ -93,47 +93,14 @@ module.exports =
 "use strict";
 
 
-/* eslint-disable no-console */
-module.exports = Behavior({
+var _onekit_behavior = __webpack_require__(1);
 
-  properties: {
-    onekitPath: {
-      type: String
-    },
-    onekitId: {
-      type: String, value: ''
-    }
-  },
-  lifetimes: {
-    attached: function attached() {
-      if (!getApp().onekit_ui) {
-        getApp().onekit_ui = {};
-      }
-      // console.log(this.data.onekitId)
-      getApp().onekit_ui[this.data.onekitId] = this;
-    },
-    detached: function detached() {
-      getApp().onekit_ui[this.data.onekitId] = null;
-    }
-  }
+var _onekit_behavior2 = _interopRequireDefault(_onekit_behavior);
 
-});
-
-/***/ }),
-
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/* eslint-disable no-case-declarations */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable no-useless-computed-key */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = Behavior({
+  behaviors: [_onekit_behavior2.default],
   data: {},
   properties: {
     layout_width: {
@@ -370,6 +337,47 @@ module.exports = Behavior({
     },
     setVisibility: function setVisibility() {}
   }
+}); /* eslint-disable no-case-declarations */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable no-useless-computed-key */
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/* eslint-disable no-console */
+module.exports = Behavior({
+
+  properties: {
+    onekitPath: {
+      type: String
+    },
+    onekitId: {
+      type: String, value: ''
+    }
+  },
+  lifetimes: {
+    attached: function attached() {
+      if (!getApp().onekit_ui) {
+        getApp().onekit_ui = {};
+      }
+      if (this.data.onekitId) {
+        getApp().onekit_ui[this.data.onekitId] = this;
+      }
+    },
+    detached: function detached() {
+      if (this.data.onekitId) {
+        getApp().onekit_ui[this.data.onekitId] = null;
+      }
+    }
+  }
+
 });
 
 /***/ }),
@@ -380,27 +388,20 @@ module.exports = Behavior({
 "use strict";
 
 
-var _onekit_behavior = __webpack_require__(0);
-
-var _onekit_behavior2 = _interopRequireDefault(_onekit_behavior);
-
-var _android_behavior = __webpack_require__(1);
+var _android_behavior = __webpack_require__(0);
 
 var _android_behavior2 = _interopRequireDefault(_android_behavior);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-/* eslint-disable camelcase */
 Component({
-  behaviors: [_onekit_behavior2.default, _android_behavior2.default],
+  behaviors: [_android_behavior2.default],
   options: {
     virtualHost: true
   },
   properties: {},
   methods: {}
-});
+}); /* eslint-disable camelcase */
 
 /***/ })
 

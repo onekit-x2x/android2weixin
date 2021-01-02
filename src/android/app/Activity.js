@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
-import {PATH} from 'oneutil'
-import OneKit from '../../js/OneKit'
+// import {PATH} from 'oneutil'
+// import OneKit from '../../js/OneKit'
+import Any from '../../java/lang/Any'
 
-export default class Activity {
+export default class Activity extends Any {
   onCreate() {
 
   }
@@ -17,11 +18,7 @@ export default class Activity {
   }
 
   startActivity(intent) {
-    const url = PATH.rel2abs(OneKit.currentUrl, intent.newActivityClass.replace('$$', '/'))
-    console.log(url)
-  }
-
-  static get class() {
-    return this.name
+    console.log(intent._newActivityClass)
+    // const url = PATH.rel2abs(OneKit.currentUrl, intent._newActivityClass.replace('$$', '/'))
   }
 }
