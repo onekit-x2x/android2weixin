@@ -3,7 +3,7 @@ const path = require('path')
 
 const out = `${process.argv.splice(2)[0]}/android2weixin`
 const cwd = process.cwd()
-
+/*
 function copy(folder){
     if(!fs.existsSync(path.join(cwd, out,folder))){
         fs.mkdirSync( path.join(cwd, out,folder))
@@ -23,3 +23,4 @@ function copy(folder){
 }
 copy('java')
 copy('js')
+*/

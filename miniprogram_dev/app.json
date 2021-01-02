@@ -1,6 +1,6 @@
 {
   "pages": [
-    "java/com/tencent/trtcsimpledemo/MainActivity"
+    "com/tencent/trtcsimpledemo/MainActivity"
   ],
   "usingComponents": {
     "onekit-Button":"/android2weixin/ui/Button/Button",

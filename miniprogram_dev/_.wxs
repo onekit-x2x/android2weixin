@@ -1,11 +1,11 @@
 
   var libs ={
-    android:require("android2weixin/java/android/R.wxs")
+    android:require("android2weixin/android/R.wxs")
   }
   var projects = [
-    require("java/com/tencent/trtcsimpledemo/R.wxs"),
-    require("java/com/tencent/custom/R.wxs"),
-    require("java/com/tencent/live/R.wxs")
+    require("com/tencent/trtcsimpledemo/R.wxs"),
+    require("com/tencent/custom/R.wxs"),
+    require("com/tencent/live/R.wxs")
   ]
 var _ = function (str,isDimension){
   if(str.indexOf("@")!=0){
