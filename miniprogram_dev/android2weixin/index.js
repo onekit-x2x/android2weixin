@@ -113,7 +113,9 @@ exports.default = Bundle;
 
 exports.__esModule = true;
 
-var _Any2 = __webpack_require__(16);
+var _oneutil = __webpack_require__(16);
+
+var _Any2 = __webpack_require__(17);
 
 var _Any3 = _interopRequireDefault(_Any2);
 
@@ -125,8 +127,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
-// import {PATH} from 'oneutil'
-// import OneKit from '../../js/OneKit'
 
 
 var Activity = function (_Any) {
@@ -147,8 +147,11 @@ var Activity = function (_Any) {
   };
 
   Activity.prototype.startActivity = function startActivity(intent) {
-    console.log(intent._newActivityClass);
-    // const url = PATH.rel2abs(OneKit.currentUrl, intent._newActivityClass.replace('$$', '/'))
+    var url = '/' + _oneutil.STRING.replace(intent._newActivityClass, '.', '/');
+    console.log(url);
+    wx.navigateTo({
+      url: url
+    });
   };
 
   return Activity;
@@ -304,7 +307,7 @@ var _android = __webpack_require__(14);
 
 var _android2 = _interopRequireDefault(_android);
 
-var _androidx = __webpack_require__(23);
+var _androidx = __webpack_require__(24);
 
 var _androidx2 = _interopRequireDefault(_androidx);
 
@@ -369,15 +372,15 @@ var _app = __webpack_require__(15);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _content = __webpack_require__(17);
+var _content = __webpack_require__(18);
 
 var _content2 = _interopRequireDefault(_content);
 
-var _os = __webpack_require__(19);
+var _os = __webpack_require__(20);
 
 var _os2 = _interopRequireDefault(_os);
 
-var _view = __webpack_require__(21);
+var _view = __webpack_require__(22);
 
 var _view2 = _interopRequireDefault(_view);
 
@@ -406,6 +409,12 @@ module.exports = {
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("oneutil");
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -435,13 +444,13 @@ var Any = function () {
 exports.default = Any;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Intent = __webpack_require__(18);
+var _Intent = __webpack_require__(19);
 
 var _Intent2 = _interopRequireDefault(_Intent);
 
@@ -452,7 +461,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -473,7 +482,7 @@ var Intent = function Intent(currentActivity, newActivityClass) {
 exports.default = Intent;
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -483,7 +492,7 @@ var _Bundle = __webpack_require__(2);
 
 var _Bundle2 = _interopRequireDefault(_Bundle);
 
-var _Handler = __webpack_require__(20);
+var _Handler = __webpack_require__(21);
 
 var _Handler2 = _interopRequireDefault(_Handler);
 
@@ -495,7 +504,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -523,13 +532,13 @@ var Handler = function () {
 exports.default = Handler;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _View = __webpack_require__(22);
+var _View = __webpack_require__(23);
 
 var _View2 = _interopRequireDefault(_View);
 
@@ -540,7 +549,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -557,25 +566,25 @@ var View = function View() {
 exports.default = View;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _activity = __webpack_require__(24);
+var _activity = __webpack_require__(25);
 
 var _activity2 = _interopRequireDefault(_activity);
 
-var _appcompat = __webpack_require__(25);
+var _appcompat = __webpack_require__(26);
 
 var _appcompat2 = _interopRequireDefault(_appcompat);
 
-var _core = __webpack_require__(28);
+var _core = __webpack_require__(29);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _fragment = __webpack_require__(30);
+var _fragment = __webpack_require__(31);
 
 var _fragment2 = _interopRequireDefault(_fragment);
 
@@ -586,7 +595,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -603,13 +612,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(26);
+var _app = __webpack_require__(27);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -620,7 +629,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -630,7 +639,7 @@ var _ActionBar = __webpack_require__(6);
 
 var _ActionBar2 = _interopRequireDefault(_ActionBar);
 
-var _AppCompatActivity = __webpack_require__(27);
+var _AppCompatActivity = __webpack_require__(28);
 
 var _AppCompatActivity2 = _interopRequireDefault(_AppCompatActivity);
 
@@ -642,7 +651,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -687,13 +696,13 @@ var AppCompatActivity = function (_FragmentActivity) {
 exports.default = AppCompatActivity;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(29);
+var _app = __webpack_require__(30);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -704,7 +713,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -722,13 +731,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.ComponentActivity = _ComponentActivity2.default;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(31);
+var _app = __webpack_require__(32);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -739,7 +748,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

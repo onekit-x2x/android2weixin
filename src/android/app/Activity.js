@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
-// import {PATH} from 'oneutil'
-// import OneKit from '../../js/OneKit'
+import {STRING} from 'oneutil'
 import Any from '../../java/lang/Any'
 
 export default class Activity extends Any {
@@ -18,7 +17,10 @@ export default class Activity extends Any {
   }
 
   startActivity(intent) {
-    console.log(intent._newActivityClass)
-    // const url = PATH.rel2abs(OneKit.currentUrl, intent._newActivityClass.replace('$$', '/'))
+    const url = '/' + STRING.replace(intent._newActivityClass, '.', '/')
+    console.log(url)
+    wx.navigateTo({
+      url
+    })
   }
 }
