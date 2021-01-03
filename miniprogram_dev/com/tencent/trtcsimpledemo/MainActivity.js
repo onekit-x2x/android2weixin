@@ -8,7 +8,7 @@ const CustomEntranceActivity = {class:"com.tencent.custom.CustomEntranceActivity
 const ScreenEntranceActivity = {class:"com.tencent.liteav.screen.ScreenEntranceActivity"};
 const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"};
 const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"};
-const R = "./R";
+import R from "./R";
 
 export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
