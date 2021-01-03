@@ -1,5 +1,4 @@
-import {OnekitPage} from '../../../index';
-import {android,androidx,com} from '../../../index';
+import {OnekitPage,android,androidx} from '../../../android2weixin';
 const AppCompatActivity = androidx.appcompat.app.AppCompatActivity;
 
 export default class LiveRoomListActivity extends AppCompatActivity{

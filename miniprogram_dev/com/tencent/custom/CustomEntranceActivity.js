@@ -1,8 +1,7 @@
-import {OnekitPage} from '../../../index';
-import {android,androidx,com} from '../../../index';
+import {OnekitPage,android,androidx} from '../../../android2weixin';
 const AppCompatActivity = androidx.appcompat.app.AppCompatActivity;
 
-OnekitPage(new CustomEntranceActivity());
 export default class CustomEntranceActivity extends AppCompatActivity{
   
 }
+OnekitPage(new CustomEntranceActivity());

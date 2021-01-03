@@ -1,19 +1,17 @@
-import {OnekitPage} from '../../../index';
-import {android,androidx,com} from '../../../index';
+import {OnekitPage,android,androidx} from '../../../android2weixin/index';
 const Intent = android.content.Intent;
 const Bundle = android.os.Bundle;
 const Handler = android.os.Handler;
 const View = android.view.View;
 const AppCompatActivity = androidx.appcompat.app.AppCompatActivity;
-const CustomEntranceActivity = com.tencent.custom.CustomEntranceActivity;
-const ScreenEntranceActivity = com.tencent.liteav.screen.ScreenEntranceActivity;
-const LiveRoomListActivity = com.tencent.live.LiveRoomListActivity;
-const RTCEntranceActivity = com.tencent.rtc.RTCEntranceActivity;
-const R = com.tencent.trtcsimpledemo.R;
+const CustomEntranceActivity = {class:"com.tencent.custom.CustomEntranceActivity"};
+const ScreenEntranceActivity = {class:"com.tencent.liteav.screen.ScreenEntranceActivity"};
+const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"};
+const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"};
+const R = "./R";
 
 export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
-        console.log(com)
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
         this.getSupportActionBar().hide()

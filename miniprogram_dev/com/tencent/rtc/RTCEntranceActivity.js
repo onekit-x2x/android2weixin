@@ -1,5 +1,5 @@
-import {OnekitPage} from '../../../index';
-import {android,androidx,com} from '../../../index';
+
+import {OnekitPage,androidx} from '../../../android2weixin/index';
 const AppCompatActivity = androidx.appcompat.app.AppCompatActivity;
 
 export default class RTCEntranceActivity extends AppCompatActivity{
