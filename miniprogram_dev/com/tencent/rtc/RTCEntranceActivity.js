@@ -1,6 +1,6 @@
 import {OnekitPage} from '../../../android2weixin/index';
 import {android,androidx} from '../../../android2weixin/index';
-import {com} from '../../../com/index';
+import {com} from '../../../index';
 const Intent = android.content.Intent
 const Bundle = android.os.Bundle
 const TextUtils = android.text.TextUtils

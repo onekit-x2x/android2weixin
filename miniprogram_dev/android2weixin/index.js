@@ -307,7 +307,7 @@ var _android = __webpack_require__(14);
 
 var _android2 = _interopRequireDefault(_android);
 
-var _androidx = __webpack_require__(24);
+var _androidx = __webpack_require__(30);
 
 var _androidx2 = _interopRequireDefault(_androidx);
 
@@ -380,14 +380,22 @@ var _os = __webpack_require__(20);
 
 var _os2 = _interopRequireDefault(_os);
 
-var _view = __webpack_require__(22);
+var _text = __webpack_require__(22);
+
+var _text2 = _interopRequireDefault(_text);
+
+var _view = __webpack_require__(24);
 
 var _view2 = _interopRequireDefault(_view);
+
+var _widget = __webpack_require__(28);
+
+var _widget2 = _interopRequireDefault(_widget);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
-  app: _app2.default, content: _content2.default, os: _os2.default, view: _view2.default
+  app: _app2.default, content: _content2.default, os: _os2.default, text: _text2.default, view: _view2.default, widget: _widget2.default
 };
 
 /***/ }),
@@ -538,18 +546,80 @@ exports.default = Handler;
 "use strict";
 
 
-var _View = __webpack_require__(23);
+var _TextUtils = __webpack_require__(23);
+
+var _TextUtils2 = _interopRequireDefault(_TextUtils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  TextUtils: _TextUtils2.default
+};
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TextUtils = function TextUtils() {
+  _classCallCheck(this, TextUtils);
+};
+
+exports.default = TextUtils;
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _inputmethod = __webpack_require__(25);
+
+var _inputmethod2 = _interopRequireDefault(_inputmethod);
+
+var _View = __webpack_require__(27);
 
 var _View2 = _interopRequireDefault(_View);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
-  View: _View2.default
+  inputmethod: _inputmethod2.default, View: _View2.default
 };
 
 /***/ }),
-/* 23 */
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _InputMethodManager = __webpack_require__(26);
+
+var _InputMethodManager2 = _interopRequireDefault(_InputMethodManager);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  InputMethodManager: _InputMethodManager2.default
+};
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -566,25 +636,59 @@ var View = function View() {
 exports.default = View;
 
 /***/ }),
-/* 24 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _activity = __webpack_require__(25);
+var _EditText = __webpack_require__(29);
+
+var _EditText2 = _interopRequireDefault(_EditText);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  EditText: _EditText2.default
+};
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EditText = function EditText() {
+  _classCallCheck(this, EditText);
+};
+
+exports.default = EditText;
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _activity = __webpack_require__(31);
 
 var _activity2 = _interopRequireDefault(_activity);
 
-var _appcompat = __webpack_require__(26);
+var _appcompat = __webpack_require__(32);
 
 var _appcompat2 = _interopRequireDefault(_appcompat);
 
-var _core = __webpack_require__(29);
+var _core = __webpack_require__(35);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _fragment = __webpack_require__(31);
+var _fragment = __webpack_require__(37);
 
 var _fragment2 = _interopRequireDefault(_fragment);
 
@@ -595,7 +699,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 25 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -612,13 +716,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 26 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(27);
+var _app = __webpack_require__(33);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -629,7 +733,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 27 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -639,7 +743,7 @@ var _ActionBar = __webpack_require__(6);
 
 var _ActionBar2 = _interopRequireDefault(_ActionBar);
 
-var _AppCompatActivity = __webpack_require__(28);
+var _AppCompatActivity = __webpack_require__(34);
 
 var _AppCompatActivity2 = _interopRequireDefault(_AppCompatActivity);
 
@@ -651,7 +755,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 28 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -696,13 +800,13 @@ var AppCompatActivity = function (_FragmentActivity) {
 exports.default = AppCompatActivity;
 
 /***/ }),
-/* 29 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(30);
+var _app = __webpack_require__(36);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -713,7 +817,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 30 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -731,13 +835,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.ComponentActivity = _ComponentActivity2.default;
 
 /***/ }),
-/* 31 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(32);
+var _app = __webpack_require__(38);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -748,7 +852,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 32 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

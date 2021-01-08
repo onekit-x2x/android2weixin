@@ -1,5 +1,5 @@
 import {OnekitPage} from '../../../android2weixin/index';
-import {android} from '../../../android2weixin/index';
+import {android,androidx} from '../../../android2weixin/index';
 const Intent = android.content.Intent;
 const Bundle = android.os.Bundle;
 const Handler = android.os.Handler;
