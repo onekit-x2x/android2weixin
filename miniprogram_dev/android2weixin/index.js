@@ -149,6 +149,7 @@ var Activity = function (_Any) {
   Activity.prototype.startActivity = function startActivity(intent) {
     var url = '/' + _oneutil.STRING.replace(intent._newActivityClass, '.', '/');
     console.log(url);
+    console.log(url);
     wx.navigateTo({
       url: url
     });

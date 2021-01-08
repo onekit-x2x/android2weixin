@@ -6,10 +6,10 @@ const Handler = android2weixin.android.os.Handler
 const View = android2weixin.android.view.View
 const AppCompatActivity = android2weixin.androidx.appcompat.app.AppCompatActivity
 const R = android2weixin.com.tencent.trtcsimpledemo.R
-const CustomEntranceActivity = {class:"android2weixin.com.tencent.custom.CustomEntranceActivity"}
-const ScreenEntranceActivity = {class:"android2weixin.com.tencent.liteav.screen.ScreenEntranceActivity"}
-const LiveRoomListActivity = {class:"android2weixin.com.tencent.live.LiveRoomListActivity"}
-const RTCEntranceActivity = {class:"android2weixin.com.tencent.rtc.RTCEntranceActivity"}
+const CustomEntranceActivity = {class:"com.tencent.custom.CustomEntranceActivity"}
+const ScreenEntranceActivity = {class:"com.tencent.liteav.screen.ScreenEntranceActivity"}
+const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"}
+const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"}
 class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
         super.onCreate(savedInstanceState)
