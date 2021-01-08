@@ -1,15 +1,15 @@
 import {OnekitPage} from '../../../android2weixin/index';
-import {android,androidx} from '../../../android2weixin/index';
-const Intent = android.content.Intent;
-const Bundle = android.os.Bundle;
-const Handler = android.os.Handler;
-const View = android.view.View;
-const AppCompatActivity = androidx.appcompat.app.AppCompatActivity;
+import android2weixin from '../../../index';
+const Intent = android2weixin.android.content.Intent;
+const Bundle = android2weixin.android.os.Bundle;
+const Handler = android2weixin.android.os.Handler;
+const View = android2weixin.android.view.View;
+const AppCompatActivity = android2weixin.androidx.appcompat.app.AppCompatActivity;
 const CustomEntranceActivity = {class:"com.tencent.custom.CustomEntranceActivity"};
 const ScreenEntranceActivity = {class:"com.tencent.liteav.screen.ScreenEntranceActivity"};
 const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"};
 const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"};
-import R from "./R";
+const R = android2weixin.com.tencent.trtcsimpledemo.R;
 
 export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){

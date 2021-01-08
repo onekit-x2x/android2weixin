@@ -1,4 +1,4 @@
+import android2weixin from './android2weixin/index'
 import com from './com/index'
-module.exports = {
-  com
-}
+android2weixin.com = com
+module.exports = android2weixin

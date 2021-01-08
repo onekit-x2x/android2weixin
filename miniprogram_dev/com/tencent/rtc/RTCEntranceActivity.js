@@ -1,16 +1,15 @@
 import {OnekitPage} from '../../../android2weixin/index';
-import {android,androidx} from '../../../android2weixin/index';
-import {com} from '../../../index';
-const Intent = android.content.Intent
-const Bundle = android.os.Bundle
-const TextUtils = android.text.TextUtils
-const View = android.view.View
-const InputMethodManager = android.view.inputmethod.InputMethodManager
-const EditText = android.widget.EditText
-const Toast = android.widget.Toast
-const AppCompatActivity = androidx.appcompat.app.AppCompatActivity
-const Constant = com.tencent.liteav.debug.Constant
-const R  = com.tencent.rtc.R
+import android2weixin from '../../../index';
+const Intent = android2weixin.android.content.Intent
+const Bundle = android2weixin.android.os.Bundle
+const TextUtils = android2weixin.android.text.TextUtils
+const View = android2weixin.android.view.View
+const InputMethodManager = android2weixin.android.view.inputmethod.InputMethodManager
+const EditText = android2weixin.android.widget.EditText
+const Toast = android2weixin.android.widget.Toast
+const AppCompatActivity = android2weixin.androidx.appcompat.app.AppCompatActivity
+const Constant = android2weixin.com.tencent.liteav.debug.Constant
+const R = android2weixin.com.tencent.rtc.R
 class RTCEntranceActivity extends AppCompatActivity{
     constructor(){
         super()
