@@ -1,17 +1,22 @@
-import {OnekitPage} from 'android2weixin';
-import Intent from "android2weixin/android/content/Intent"
-import Bundle from "android2weixin/android/os/Bundle"
-import TextUtils from "android2weixin/android/text/TextUtils"
-import View from "android2weixin/android/view/View"
-import InputMethodManager from "android2weixin/android/view/inputmethod/InputMethodManager"
-import EditText from "android2weixin/android/widget/EditText"
-import Toast from "android2weixin/android/widget/Toast"
-import AppCompatActivity from "android2weixin/androidx/appcompat/app/AppCompatActivity"
-import Constant from "android2weixin/com/tencent/liteav/debug/Constant"
-import R from "android2weixin/com/tencent/rtc/R"
+import {OnekitPage} from '../../../android2weixin/index';
+import {android,androidx} from '../../../android2weixin/index';
+import {com} from '../../../com/index';
+const Intent = android.content.Intent
+const Bundle = android.os.Bundle
+const TextUtils = android.text.TextUtils
+const View = android.view.View
+const InputMethodManager = android.view.inputmethod.InputMethodManager
+const EditText = android.widget.EditText
+const Toast = android.widget.Toast
+const AppCompatActivity = androidx.appcompat.app.AppCompatActivity
+const Constant = com.tencent.liteav.debug.Constant
+const R  = com.tencent.rtc.R
 class RTCEntranceActivity extends AppCompatActivity{
-mInputUserId;
-mInputRoomId;
+    constructor(){
+        super()
+        this.mInputUserId=null;
+        this.mInputRoomId=null;
+    }
     onCreate(savedInstanceState ){
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_rtc_entrance)
@@ -57,4 +62,4 @@ mInputRoomId;
     }
 }
 
-OnekitPage(new MainActivity());
+OnekitPage(new RTCEntranceActivity());
