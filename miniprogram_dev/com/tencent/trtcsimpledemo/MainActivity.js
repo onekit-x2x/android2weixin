@@ -21,7 +21,7 @@ class MainActivity extends AppCompatActivity{
     }
 },1000)
         this.findViewById(R.id.bt_rtc).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         var intent = new Intent(this,RTCEntranceActivity.class)
         this.startActivity(intent)
     }
