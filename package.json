@@ -41,7 +41,7 @@
     }
   },
   "dependencies": {
-    "oneutil": "2.2.1"
+    "oneutil": "^2.3.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",

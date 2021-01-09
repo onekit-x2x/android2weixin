@@ -141,9 +141,9 @@ var Activity = function (_Any) {
 
   Activity.prototype.onCreate = function onCreate() {};
 
-  Activity.prototype.setContentView = function setContentView(layout) {
-    var onekit_ui = '/layout/' + layout + '.wxml';
-    this.PAGE.setData({ onekit_ui: onekit_ui });
+  Activity.prototype.setContentView = function setContentView() {// layout) {
+    // const onekit_ui = `/layout/${layout}.wxml`
+    // this.PAGE.setData({onekit_ui})
   };
 
   Activity.prototype.findViewById = function findViewById(id) {

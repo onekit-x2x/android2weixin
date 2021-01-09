@@ -1,5 +1,5 @@
-import {OnekitPage} from '../../../android2weixin/index';
-import android2weixin from '../../../android2weixin/index';
+import {OnekitPage} from '../../../../../index';
+import android2weixin from '../../../../../index';
 const Intent = android2weixin.android.content.Intent
 const Bundle = android2weixin.android.os.Bundle
 const Handler = android2weixin.android.os.Handler
@@ -14,7 +14,7 @@ class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
-        /*this.getSupportActionBar().hide()
+        this.getSupportActionBar().hide()
         new Handler().postDelayed({
     run:()=>{
         this.findViewById(R.id.launch_view).setVisibility(View.GONE)
@@ -43,8 +43,9 @@ class MainActivity extends AppCompatActivity{
         var intent = new Intent(this,CustomEntranceActivity.class)
         this.startActivity(intent)
     }
-})*/
+})
     }
 }
 
 OnekitPage(new MainActivity());
+Page({})

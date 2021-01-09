@@ -1,4 +1,4 @@
-import {OnekitPage} from '../../../android2weixin/index';
+/*import {OnekitPage} from '../../../android2weixin/index';
 import android2weixin from '../../../index';
 const Intent = android2weixin.android.content.Intent
 const Bundle = android2weixin.android.os.Bundle
@@ -62,4 +62,5 @@ class RTCEntranceActivity extends AppCompatActivity{
     }
 }
 
-OnekitPage(new RTCEntranceActivity());
+OnekitPage(new RTCEntranceActivity());*/
+Page({})

@@ -1,7 +1,7 @@
 {
   "pages": [
-    "com/tencent/trtcsimpledemo/MainActivity",
-    "com/tencent/rtc/RTCEntranceActivity"
+    "app/java/com/tencent/trtcsimpledemo/MainActivity",
+    "rtc/java/com/tencent/rtc/RTCEntranceActivity"
   ],
   "usingComponents": {
     "onekit-Button":"/android2weixin/ui/Button/Button",

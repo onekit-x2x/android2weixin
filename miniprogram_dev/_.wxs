@@ -1,12 +1,14 @@
-
+/*const app = require("./app/R.wxs")
+const custom = require("./custom/R.wxs")
+const live = require("./live/R.wxs")
+  var projects = [
+    ...app,
+    ...custom,
+    ...live,
+  ]
   var libs ={
     android:require("android2weixin/android/R.wxs")
   }
-  var projects = [
-    require("com/tencent/trtcsimpledemo/R.wxs"),
-    require("com/tencent/custom/R.wxs"),
-    require("com/tencent/live/R.wxs")
-  ]
 var _ = function (str,isDimension){
   if(str.indexOf("@")!=0){
     if(isDimension){
@@ -79,3 +81,4 @@ var _ = function (str,isDimension){
   }
 }
 module.exports = _;
+*/

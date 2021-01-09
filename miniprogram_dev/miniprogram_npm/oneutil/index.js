@@ -4,22 +4,23 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1609649221490, function(require, module, exports) {
+__DEFINE__(1610095895811, function(require, module, exports) {
 var __TEMP__ = require('./BOOLEAN');var BOOLEAN = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./COLOR');var COLOR = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./DATE');var DATE = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./HTML');var HTML = __REQUIRE_DEFAULT__(__TEMP__);
+var __TEMP__ = require('./OBJECT');var OBJECT = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./PATH');var PATH = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./PROMISE');var PROMISE = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./STRING');var STRING = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./TASK');var TASK = __REQUIRE_DEFAULT__(__TEMP__);
 var __TEMP__ = require('./URL');var URL = __REQUIRE_DEFAULT__(__TEMP__);
 
-if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, 'BOOLEAN', { enumerable: true, configurable: true, get: function() { return BOOLEAN; } });Object.defineProperty(exports, 'COLOR', { enumerable: true, configurable: true, get: function() { return COLOR; } });Object.defineProperty(exports, 'DATE', { enumerable: true, configurable: true, get: function() { return DATE; } });Object.defineProperty(exports, 'HTML', { enumerable: true, configurable: true, get: function() { return HTML; } });Object.defineProperty(exports, 'PATH', { enumerable: true, configurable: true, get: function() { return PATH; } });Object.defineProperty(exports, 'PROMISE', { enumerable: true, configurable: true, get: function() { return PROMISE; } });Object.defineProperty(exports, 'STRING', { enumerable: true, configurable: true, get: function() { return STRING; } });Object.defineProperty(exports, 'TASK', { enumerable: true, configurable: true, get: function() { return TASK; } });Object.defineProperty(exports, 'URL', { enumerable: true, configurable: true, get: function() { return URL; } });
+if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, 'BOOLEAN', { enumerable: true, configurable: true, get: function() { return BOOLEAN; } });Object.defineProperty(exports, 'COLOR', { enumerable: true, configurable: true, get: function() { return COLOR; } });Object.defineProperty(exports, 'DATE', { enumerable: true, configurable: true, get: function() { return DATE; } });Object.defineProperty(exports, 'HTML', { enumerable: true, configurable: true, get: function() { return HTML; } });Object.defineProperty(exports, 'OBJECT', { enumerable: true, configurable: true, get: function() { return OBJECT; } });Object.defineProperty(exports, 'PATH', { enumerable: true, configurable: true, get: function() { return PATH; } });Object.defineProperty(exports, 'PROMISE', { enumerable: true, configurable: true, get: function() { return PROMISE; } });Object.defineProperty(exports, 'STRING', { enumerable: true, configurable: true, get: function() { return STRING; } });Object.defineProperty(exports, 'TASK', { enumerable: true, configurable: true, get: function() { return TASK; } });Object.defineProperty(exports, 'URL', { enumerable: true, configurable: true, get: function() { return URL; } });
 
 
-}, function(modId) {var map = {"./BOOLEAN":1609649221491,"./COLOR":1609649221492,"./DATE":1609649221493,"./HTML":1609649221494,"./PATH":1609649221495,"./PROMISE":1609649221496,"./STRING":1609649221497,"./TASK":1609649221498,"./URL":1609649221499}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221491, function(require, module, exports) {
+}, function(modId) {var map = {"./BOOLEAN":1610095895812,"./COLOR":1610095895813,"./DATE":1610095895814,"./HTML":1610095895815,"./OBJECT":1610095895816,"./PATH":1610095895817,"./PROMISE":1610095895818,"./STRING":1610095895819,"./TASK":1610095895820,"./URL":1610095895821}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1610095895812, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class BOOLEAN
 {
     static fix(obj) {
@@ -35,7 +36,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
       }
 };exports.default = BOOLEAN
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221492, function(require, module, exports) {
+__DEFINE__(1610095895813, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class COLOR {
   static rgba2str(r, g, b, a) {
     function componentToHex(c) {
@@ -234,7 +235,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = COLOR
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221493, function(require, module, exports) {
+__DEFINE__(1610095895814, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class DATE {
   static monthDays(year, month) {
     if ([1, 3, 5, 7, 8, 10, 12].indexOf(month) >= 0) {
@@ -252,7 +253,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = DATE
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221494, function(require, module, exports) {
+__DEFINE__(1610095895815, function(require, module, exports) {
 /* eslint-disable no-console */
 /* eslint-disable guard-for-in */
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class HTML {
@@ -327,7 +328,29 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = HTML
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221495, function(require, module, exports) {
+__DEFINE__(1610095895816, function(require, module, exports) {
+if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class OBJECT {
+    static assign(object1, object2) {
+        if (object2 == null) {
+            return object1
+        }
+        for (const key of Object.keys(object2)) {
+            const value1 = object1[key]
+            const value2 = object2[key]
+            if (value2 == null) {
+                continue;
+            }
+            if (value1 != null) {
+                object1[key] = OBJECT.assign(value1, value2)
+            } else {
+                object1[key] = value2
+            }
+        }
+        return object1;
+    }
+};exports.default = OBJECT
+}, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1610095895817, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class PATH {
   static rel2abs(currentUrl, url) {
     if (url.startsWith('/')) {
@@ -376,7 +399,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = PATH
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221496, function(require, module, exports) {
+__DEFINE__(1610095895818, function(require, module, exports) {
 /* eslint-disable camelcase */
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });exports.default = function (body, success, fail, complete) {
   try {
@@ -410,7 +433,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221497, function(require, module, exports) {
+__DEFINE__(1610095895819, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class STRING {
   static firstUpper(str) {
     return str.substr(0, 1).toUpperCase() + str.substr(1)
@@ -419,7 +442,9 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
   static firstLower(str) {
     return str.substr(0, 1).toLowerCase() + str.substr(1)
   }
-
+  static replaceAll(str,str1,str2){
+    return str.replace(new RegExp(str1,"gm"),str2);
+  }
   static replace(string, str1, str2) {
     let result = ''
     let inTag = false
@@ -458,7 +483,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = STRING
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221498, function(require, module, exports) {
+__DEFINE__(1610095895820, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });exports.default = function (items, func, success) {
   const result = []
   let i = 0
@@ -475,7 +500,7 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1609649221499, function(require, module, exports) {
+__DEFINE__(1610095895821, function(require, module, exports) {
 if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: true });class URL {
   constructor(url) {
     const p1 = url.indexOf(':')
@@ -514,6 +539,6 @@ if (!exports.__esModule) Object.defineProperty(exports, "__esModule", { value: t
 };exports.default = URL
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1609649221490);
+return __REQUIRE__(1610095895811);
 })()
 //# sourceMappingURL=index.js.map
