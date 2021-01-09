@@ -14,7 +14,7 @@ class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
-        this.getSupportActionBar().hide()
+        /*this.getSupportActionBar().hide()
         new Handler().postDelayed({
     run:()=>{
         this.findViewById(R.id.launch_view).setVisibility(View.GONE)
@@ -43,7 +43,7 @@ class MainActivity extends AppCompatActivity{
         var intent = new Intent(this,CustomEntranceActivity.class)
         this.startActivity(intent)
     }
-})
+})*/
     }
 }
 

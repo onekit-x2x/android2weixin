@@ -125,7 +125,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable no-console */
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /* eslint-disable camelcase */
+/* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
 
 
@@ -140,7 +141,10 @@ var Activity = function (_Any) {
 
   Activity.prototype.onCreate = function onCreate() {};
 
-  Activity.prototype.setContentView = function setContentView() {};
+  Activity.prototype.setContentView = function setContentView(layout) {
+    var onekit_ui = '/layout/' + layout + '.wxml';
+    this.PAGE.setData({ onekit_ui: onekit_ui });
+  };
 
   Activity.prototype.findViewById = function findViewById(id) {
     return getApp().onekit_ui[id];
@@ -148,7 +152,6 @@ var Activity = function (_Any) {
 
   Activity.prototype.startActivity = function startActivity(intent) {
     var url = '/' + _oneutil.STRING.replace(intent._newActivityClass, '.', '/');
-    console.log(url);
     console.log(url);
     wx.navigateTo({
       url: url

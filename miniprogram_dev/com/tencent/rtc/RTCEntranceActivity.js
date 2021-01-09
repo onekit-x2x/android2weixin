@@ -8,8 +8,9 @@ const InputMethodManager = android2weixin.android.view.inputmethod.InputMethodMa
 const EditText = android2weixin.android.widget.EditText
 const Toast = android2weixin.android.widget.Toast
 const AppCompatActivity = android2weixin.androidx.appcompat.app.AppCompatActivity
-const Constant = android2weixin.com.tencent.liteav.debug.Constant
 const R = android2weixin.com.tencent.rtc.R
+const RTCActivity = {class:"android2weixin.com.tencent.rtc.RTCActivity"}
+const Constant = android2weixin.com.tencent.liteav.debug.Constant
 class RTCEntranceActivity extends AppCompatActivity{
     constructor(){
         super()
