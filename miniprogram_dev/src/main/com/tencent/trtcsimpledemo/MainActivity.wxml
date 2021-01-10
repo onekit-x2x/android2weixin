@@ -1,0 +1,2 @@
+<wxs module="_" src="../../../../../_.wxs" />
+<include src="/layout/activity_main.wxml"/>

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
-import Bundle from './src/android/os/Bundle'
+import Bundle from './src/main/android/os/Bundle'
 
 export default function (adr_activity) {
   const wx_object = {

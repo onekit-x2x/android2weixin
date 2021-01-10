@@ -1,3 +1,3 @@
 import android2weixin from "./android2weixin/index"
-import java from "./java/index"
-module.exports = {...android2weixin,...java}
+import src from "./src/main/index"
+module.exports = {...android2weixin,...src}

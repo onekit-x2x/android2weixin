@@ -1,5 +1,5 @@
-import {OnekitPage} from '../../../../index';
-import android2weixin from '../../../../index';
+import {OnekitPage} from '../../../../../index';
+import android2weixin from '../../../../../index';
 const Intent = android2weixin.android.content.Intent
 const Bundle = android2weixin.android.os.Bundle
 const Handler = android2weixin.android.os.Handler
