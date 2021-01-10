@@ -1,8 +1,45 @@
 {
   "pages": [
-    "app/java/com/tencent/trtcsimpledemo/MainActivity",
-    "rtc/java/com/tencent/rtc/RTCEntranceActivity"
+    "java/com/tencent/trtcsimpledemo/MainActivity"
   ],
+  "subpackages":[
+    {
+      "root":"customcapture",
+      "pages":[
+        "java/com/tencent/custom/CustomEntranceActivity"
+      ]
+    },
+    {
+      "root":"debug",
+      "pages":[
+      ]
+    },
+    {
+      "root":"live",
+      "pages":[
+        "java/com/tencent/live/LiveRoomListActivity"
+      ]
+    },
+    {
+      "root":"rtc",
+      "pages":[
+        "java/com/tencent/rtc/RTCEntranceActivity",
+        "java/com/tencent/rtc/RTCActivity"
+      ]
+    },
+    {
+      "root":"screen",
+      "pages":[
+        "java/com/tencent/liteav/screen/ScreenEntranceActivity"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "java/com/tencent/trtcsimpledemo/MainActivity": {
+      "network":"all",
+      "packages": ["customcapture","live","rtc","screen"]
+    }
+  },
   "usingComponents": {
     "onekit-Button":"/android2weixin/ui/Button/Button",
     "onekit-LinearLayout":"/android2weixin/ui/LinearLayout/LinearLayout",

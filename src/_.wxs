@@ -1,0 +1,73 @@
+var _ = function (project,str,isDimension){
+ var libs ={
+    android:require("./android/R.wxs")
+  }
+  if(str.indexOf("@")!=0){
+    if(isDimension){
+      if(str==='inherit'){
+        return str
+      }
+      if (str.lastIndexOf('dp')===str.length-'dp'.length) {
+        return str.replace('dp', 'rpx')
+      } else if (str.lastIndexOf('dip')===str.length-'dip'.length) {
+        return str.replace('dip', 'rpx')
+      } else if (str.lastIndexOf('sp')===str.length-'sp'.length) {
+        return str.replace('sp', 'px')
+      } else if (str.lastIndexOf('px')===str.length-'px'.length) {
+        return str
+      } else {
+        throw new Error(str)
+      } 
+    }else{
+      return str
+    }
+  }
+  str = str.substring(1)
+  
+  var lib
+  var p = str.indexOf(":")
+  if(p>=0){
+    lib = str.substring(0,p)
+    str = str.substring(p+1)
+  }
+  var type_key = str.split("/")
+  var type = type_key[0]
+  var key = type_key[1]
+  if(type==='id' || type==='+id' || type==='layout' ){
+    return key
+  }
+  if(lib){
+    return libs[lib][type][key]
+  }else{
+    var result = project[type][key]
+    if(result){
+      if(type==="drawable"){
+         var css = "";
+         switch(result.type){
+           case "shape":
+            switch(result.shape){
+              case "rectangle":
+                if(result.solid){
+                  var solid = result.solid
+                  if(solid.color){
+                    css+=_(project,solid.color)+";"
+                  }
+                }
+                if(result.corners){
+                  var corners = result.corners
+                  if(corners.bottomLeftRadius){ css+="border-bottom-left-radius:"+_(project,corners.bottomLeftRadius,true)+";" }
+                  if(corners.bottomRightRadius){ css+="border-bottom-right-radius:"+_(project,corners.bottomRightRadius,true)+";" }
+                  if(corners.topLeftRadius){ css+="border-top-left-radius:"+_(project,corners.topLeftRadius,true)+";" }
+                  if(corners.topRightRadius){ css+="border-top-right-radius:"+_(project,corners.topRightRadius,true)+";" }
+                }
+                break;
+            }
+             break;
+         }
+        return css;
+      }
+      return result;
+    }
+  }
+  }
+module.exports = _;

@@ -1,0 +1,5 @@
+var _ = require("./_.wxs")
+var res = require("../android2weixin/res.wxs")
+module.exports = function (str,isDimension){
+  return res(_,str,isDimension)
+}

@@ -1,9 +1,5 @@
 import OnekitPage from './OnekitPage'
-import android from './android'
-import androidx from './androidx'
+import src from './src/index'
 
-module.exports = {
-  android,
-  androidx,
-  OnekitPage
-}
+src.OnekitPage = OnekitPage
+module.exports = src
