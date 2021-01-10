@@ -1,2 +1,2 @@
-<!--live/pages/com/tencent/live/LiveRoomListActivity.wxml-->
-<text>live/pages/com/tencent/live/LiveRoomListActivity.wxml</text>
+<wxs module="_" src="../../../../_.wxs" />
+<include src="/live/layout/activity_live_room_list.wxml"/>

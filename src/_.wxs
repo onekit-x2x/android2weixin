@@ -47,7 +47,6 @@ var _ = function (Rs,str,isDimension){
       if(R[type][key]==null){
         continue
       }
-    console.log(str,type,key)
     var result = R[type][key]
     switch(type){
       case "color":
