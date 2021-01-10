@@ -1,12 +1,12 @@
 {
   "pages": [
-    "src/main/com/tencent/trtcsimpledemo/MainActivity"
+    "pages/com/tencent/trtcsimpledemo/MainActivity"
   ],
   "subpackages":[
     {
       "root":"customcapture",
       "pages":[
-        "src/main/com/tencent/custom/CustomEntranceActivity"
+        "pages/com/tencent/custom/CustomEntranceActivity"
       ]
     },
     {
@@ -17,25 +17,25 @@
     {
       "root":"live",
       "pages":[
-        "src/main/com/tencent/live/LiveRoomListActivity"
+        "pages/com/tencent/live/LiveRoomListActivity"
       ]
     },
     {
       "root":"rtc",
       "pages":[
-        "src/main/com/tencent/rtc/RTCEntranceActivity",
-        "src/main/com/tencent/rtc/RTCActivity"
+        "pages/com/tencent/rtc/RTCEntranceActivity",
+        "pages/com/tencent/rtc/RTCActivity"
       ]
     },
     {
       "root":"screen",
       "pages":[
-        "src/main/com/tencent/liteav/screen/ScreenEntranceActivity"
+        "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
       ]
     }
   ],
   "preloadRule": {
-    "src/main/com/tencent/trtcsimpledemo/MainActivity": {
+    "pages/com/tencent/trtcsimpledemo/MainActivity": {
       "network":"all",
       "packages": ["customcapture","live","rtc","screen"]
     }

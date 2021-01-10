@@ -1,4 +1,3 @@
-import {OnekitPage} from '../../../../../index';
 import android2weixin from '../../../../../index';
 const Intent = android2weixin.android.content.Intent
 const Bundle = android2weixin.android.os.Bundle
@@ -10,7 +9,7 @@ const CustomEntranceActivity = {class:"com.tencent.custom.CustomEntranceActivity
 const ScreenEntranceActivity = {class:"com.tencent.liteav.screen.ScreenEntranceActivity"}
 const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"}
 const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"}
-class MainActivity extends AppCompatActivity{
+export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
         super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
@@ -46,5 +45,3 @@ class MainActivity extends AppCompatActivity{
 })
     }
 }
-
-OnekitPage(new MainActivity());
