@@ -1,6 +1,6 @@
 var _ = function (Rs,str,isDimension){
   var libs ={
-    android:require("./android/R.wxs")
+    android:require("./src/main/android/R.wxs")
   }
   if(str.indexOf("@")!=0){
     if(isDimension){
@@ -41,10 +41,14 @@ var _ = function (Rs,str,isDimension){
 
   for(var i=0;i<Rs.length;++i){
     var R = Rs[i]
+      if(R[type]==null){
+        continue
+      }
+      if(R[type][key]==null){
+        continue
+      }
+    console.log(str,type,key)
     var result = R[type][key]
-    if(result==null){
-      continue
-    }
     switch(type){
       case "color":
       case "string":
