@@ -1,5 +1,4 @@
-/*import {OnekitPage} from '../../../android2weixin/index';
-import android2weixin from '../../../index';
+import android2weixin from '../../../../../index';
 const Intent = android2weixin.android.content.Intent
 const Bundle = android2weixin.android.os.Bundle
 const TextUtils = android2weixin.android.text.TextUtils
@@ -9,9 +8,9 @@ const EditText = android2weixin.android.widget.EditText
 const Toast = android2weixin.android.widget.Toast
 const AppCompatActivity = android2weixin.androidx.appcompat.app.AppCompatActivity
 const R = android2weixin.com.tencent.rtc.R
-const RTCActivity = {class:"android2weixin.com.tencent.rtc.RTCActivity"}
+const RTCActivity = {class:"com.tencent.rtc.RTCActivity"}
 const Constant = android2weixin.com.tencent.liteav.debug.Constant
-class RTCEntranceActivity extends AppCompatActivity{
+export default class RTCEntranceActivity extends AppCompatActivity{
     constructor(){
         super()
         this.mInputUserId=null;
@@ -61,6 +60,3 @@ class RTCEntranceActivity extends AppCompatActivity{
         }
     }
 }
-
-OnekitPage(new RTCEntranceActivity());*/
-Page({})

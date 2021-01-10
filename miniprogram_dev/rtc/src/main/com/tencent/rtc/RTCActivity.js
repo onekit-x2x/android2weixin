@@ -1,5 +1,4 @@
-import android2weixin from 'android2weixin';
-import {OnekitPage} from 'android2weixin';
+import android2weixin from '../../../../../index';
 const Manifest = android2weixin.android.Manifest
 const Intent = android2weixin.android.content.Intent
 const PackageManager = android2weixin.android.content.pm.PackageManager
@@ -222,5 +221,3 @@ class RTCActivity extends AppCompatActivity{
 }
 RTCActivity.TAG = "s"
 RTCActivity.REQ_PERMISSION_CODE = 0
-
-OnekitPage(new MainActivity());

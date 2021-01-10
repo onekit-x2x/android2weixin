@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 12);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -382,7 +382,7 @@ module.exports = Behavior({
 
 /***/ }),
 
-/***/ 12:
+/***/ 11:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -399,32 +399,13 @@ Component({
   options: {
     virtualHost: true
   },
-  properties: {
-    orientation: {
-      type: String,
-      value: 'horizontal',
-      observer: function observer(newValue) {
-        var _setData;
-
-        this.setData((_setData = {}, _setData['orientationStyle'] = this._getOrientation(newValue), _setData));
-      }
-    }
-  },
+  properties: {},
   lifetimes: {
-    attached: function attached() {
-      var _setData2;
-
-      this.setData((_setData2 = {}, _setData2['orientationStyle'] = this._getOrientation(this.properties.orientation), _setData2));
-    }
+    attached: function attached() {}
   },
-  methods: {
-    _getOrientation: function _getOrientation(orientation) {
-      var direction = orientation === 'horizontal' ? 'row' : 'column';
-      return 'flex-direction:' + direction;
-    }
-  }
-}); /* eslint-disable no-useless-computed-key */
-/* eslint-disable camelcase */
+  computed: {},
+  methods: {}
+}); /* eslint-disable camelcase */
 
 /***/ })
 

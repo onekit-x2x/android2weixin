@@ -19,7 +19,7 @@ export default class Activity extends Any {
   }
 
   startActivity(intent) {
-    const url = '/' + STRING.replace(intent._newActivityClass, '.', '/')
+    const url = '/pages/' + STRING.replace(intent._newActivityClass, '.', '/')
     console.log(url)
     wx.navigateTo({
       url

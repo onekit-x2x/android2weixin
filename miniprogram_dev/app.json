@@ -1,48 +1,18 @@
 {
   "pages": [
-    "pages/com/tencent/trtcsimpledemo/MainActivity"
+    "pages/com/tencent/trtcsimpledemo/MainActivity",
+    "pages/com/tencent/custom/CustomEntranceActivity",
+    "pages/com/tencent/live/LiveRoomListActivity",
+    "pages/com/tencent/rtc/RTCEntranceActivity",
+    "pages/com/tencent/rtc/RTCActivity",
+    "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
   ],
-  "subpackages":[
-    {
-      "root":"customcapture",
-      "pages":[
-        "pages/com/tencent/custom/CustomEntranceActivity"
-      ]
-    },
-    {
-      "root":"debug",
-      "pages":[
-      ]
-    },
-    {
-      "root":"live",
-      "pages":[
-        "pages/com/tencent/live/LiveRoomListActivity"
-      ]
-    },
-    {
-      "root":"rtc",
-      "pages":[
-        "pages/com/tencent/rtc/RTCEntranceActivity",
-        "pages/com/tencent/rtc/RTCActivity"
-      ]
-    },
-    {
-      "root":"screen",
-      "pages":[
-        "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
-      ]
-    }
-  ],
-  "preloadRule": {
-    "pages/com/tencent/trtcsimpledemo/MainActivity": {
-      "network":"all",
-      "packages": ["customcapture","live","rtc","screen"]
-    }
-  },
   "usingComponents": {
     "onekit-Button":"/android2weixin/ui/Button/Button",
+    "onekit-EditText":"/android2weixin/ui/EditText/EditText",
+    "onekit-ImageView": "./android2weixin/ui/ImageView/ImageView",
     "onekit-LinearLayout":"/android2weixin/ui/LinearLayout/LinearLayout",
+    "onekit-RelativeLayou":"/android2weixin/ui/RelativeLayou/RelativeLayou",
     "onekit-TextView":"/android2weixin/ui/TextView/TextView",
     "onekit-View":"/android2weixin/ui/View/View"
   },
