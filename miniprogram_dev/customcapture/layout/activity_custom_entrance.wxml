@@ -1,0 +1,31 @@
+
+<onekit-RelativeLayout id="{{_('@+id/rtc_entrance_main')}}" layout_width="match_parent" layout_height="match_parent" background="{{_('@color/custom_main_bg')}}">
+
+<onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content">
+
+    <onekit-ImageView id="{{_('@+id/entrance_ic_back')}}" layout_width="wrap_content" layout_height="wrap_content" layout_marginLeft="10dp" layout_marginTop="15dp" background="{{_('@mipmap/custom_ic_back')}}"></onekit-ImageView>
+
+    <onekit-TextView layout_width="match_parent" layout_height="40dp" layout_marginTop="15dp" gravity="center_horizontal" text="TRTC示例教程" textColor="{{_('@android:color/white')}}" textSize="20sp"></onekit-TextView>
+
+</onekit-LinearLayout>
+
+<onekit-LinearLayout id="{{_('@+id/ll_room_info')}}" layout_width="match_parent" layout_height="wrap_content" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginTop="100dp" layout_marginRight="60dp" orientation="vertical">
+
+    <onekit-TextView layout_width="wrap_content" layout_height="wrap_content" text="请输入房间号：" textColor="{{_('@color/custom_green_bg')}}"></onekit-TextView>
+
+    <onekit-EditText id="{{_('@+id/et_input_room_id')}}" layout_width="match_parent" layout_height="34dp" layout_marginTop="5dp" background="{{_('@drawable/custom_edit_bg')}}" inputType="number"></onekit-EditText>
+
+</onekit-LinearLayout>
+
+
+<onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content" layout_below="{{_('@id/ll_room_info')}}" layout_centerHorizontal="true" layout_marginLeft="60dp" layout_marginTop="30dp" layout_marginRight="60dp" orientation="vertical">
+
+    <onekit-TextView layout_width="wrap_content" layout_height="wrap_content" text="请输入用户名：" textColor="{{_('@color/custom_green_bg')}}"></onekit-TextView>
+
+    <onekit-EditText id="{{_('@+id/et_input_username')}}" layout_width="match_parent" layout_height="34dp" layout_marginTop="5dp" background="{{_('@drawable/custom_edit_bg')}}"></onekit-EditText>
+
+</onekit-LinearLayout>
+
+<onekit-Button id="{{_('@+id/bt_enter_room')}}" layout_width="match_parent" layout_height="wrap_content" layout_alignParentBottom="true" layout_centerHorizontal="true" layout_margin="60dp" background="{{_('@drawable/custom_button_bg')}}" text="进入房间" textColor="{{_('@android:color/white')}}"></onekit-Button>
+
+</onekit-RelativeLayout>
