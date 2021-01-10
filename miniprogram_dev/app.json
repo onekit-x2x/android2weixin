@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/com/tencent/rtc/RTCEntranceActivity",
     "pages/com/tencent/trtcsimpledemo/MainActivity",
     "pages/com/tencent/custom/CustomEntranceActivity",
     "pages/com/tencent/live/LiveRoomListActivity",
-    "pages/com/tencent/rtc/RTCEntranceActivity",
     "pages/com/tencent/rtc/RTCActivity",
     "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
   ],
@@ -12,7 +12,7 @@
     "onekit-EditText":"/android2weixin/ui/EditText/EditText",
     "onekit-ImageView": "./android2weixin/ui/ImageView/ImageView",
     "onekit-LinearLayout":"/android2weixin/ui/LinearLayout/LinearLayout",
-    "onekit-RelativeLayou":"/android2weixin/ui/RelativeLayou/RelativeLayou",
+    "onekit-RelativeLayout":"/android2weixin/ui/RelativeLayout/RelativeLayout",
     "onekit-TextView":"/android2weixin/ui/TextView/TextView",
     "onekit-View":"/android2weixin/ui/View/View"
   },

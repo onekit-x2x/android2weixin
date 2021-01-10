@@ -4,7 +4,7 @@
     "EditText": "./ui/EditText/EditText",
     "ImageView": "./ui/ImageView/ImageView",
     "LinearLayout": "./ui/LinearLayout/LinearLayout",
-    "RelativeLayou": "./ui/RelativeLayou/RelativeLayou",
+    "RelativeLayout": "./ui/RelativeLayout/RelativeLayout",
     "TextView": "./ui/TextView/TextView",
     "View": "./ui/View/View"
   }

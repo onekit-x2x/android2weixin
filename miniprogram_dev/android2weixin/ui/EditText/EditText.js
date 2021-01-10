@@ -404,8 +404,18 @@ Component({
     attached: function attached() {}
   },
   computed: {},
-  methods: {}
-}); /* eslint-disable camelcase */
+  methods: {
+    getText: function getText() {
+      return this.data.text;
+    },
+    setText: function setText(text) {
+      var _setData;
+
+      this.setData((_setData = {}, _setData['text'] = text, _setData));
+    }
+  }
+}); /* eslint-disable no-useless-computed-key */
+/* eslint-disable camelcase */
 
 /***/ })
 

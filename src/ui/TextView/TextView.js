@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-computed-key */
 /* eslint-disable camelcase */
 import android_behavior from '../../behavior/android_behavior'
 
@@ -15,5 +16,13 @@ Component({
   computed: {
   },
   methods: {
+    getText() {
+      return this.data.text
+    },
+    setText(text) {
+      this.setData({
+        ['text']: text
+      })
+    }
   }
 })

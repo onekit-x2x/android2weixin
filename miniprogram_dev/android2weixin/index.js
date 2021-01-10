@@ -908,9 +908,40 @@ var _Any = __webpack_require__(4);
 
 var _Any2 = _interopRequireDefault(_Any);
 
+var _System = __webpack_require__(45);
+
+var _System2 = _interopRequireDefault(_System);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = { Any: _Any2.default };
+module.exports = { Any: _Any2.default, System: _System2.default };
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/* eslint-disable no-console */
+var System = function () {
+  function System() {
+    _classCallCheck(this, System);
+  }
+
+  System.currentTimeMillis = function currentTimeMillis() {
+    var now = new Date();
+    return now.getTime(); // * 1000 + now.getMilliseconds();
+  };
+
+  return System;
+}();
+
+exports.default = System;
 
 /***/ })
 /******/ ]);
