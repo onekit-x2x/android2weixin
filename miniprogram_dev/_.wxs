@@ -1,5 +1,11 @@
-var R = require("./R.wxs")
 var _ = require("./android2weixin/_.wxs")
 module.exports = function (str,isDimension){
-  return _(R,str,isDimension)
+  var Rs = [require("./R/R.wxs")
+  ,require("./R/customcapture.wxs")
+  ,require("./R/debug.wxs")
+  ,require("./R/live.wxs")
+  ,require("./R/rtc.wxs")
+  ,require("./R/screen.wxs")
+]
+  return _(Rs,str,isDimension)
 }
