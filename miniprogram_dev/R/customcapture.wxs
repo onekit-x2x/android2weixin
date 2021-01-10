@@ -1,4 +1,18 @@
 module.exports = {
+  anim:{
+    custom_bottom_dialog_in:{
+      node:"translate",
+      duration:"200",
+      fromYDelta:"100%",
+      toYDelta:"0" 
+    },
+    custom_bottom_dialog_out:{
+      node:"translate",
+      duration:"200",
+      fromYDelta:"0",
+      toYDelta:"100%" 
+    }
+  },
   color:{
     custom_main_bg:"#1B1B1B",
     custom_green_bg:"#00A66B",
@@ -8,5 +22,19 @@ module.exports = {
    app_name:"rtc",
     custom_room_input_error_tip:"房间号和用户名不能为空",
    custom_permisson_error_tip:"用户没有允许需要的权限，加入通话失败"
+  },
+  drawable:{
+    custom_button_bg:{
+      node:"shape",
+    shape:"rectangle",
+solid:{color="@color/custom_green_bg"},
+
+    corners:{
+        bottomLeftRadius:"5dp",
+        bottomRightRadius:"5dp",
+        topLeftRadius:"5dp",
+        topRightRadius:"5dp" }
+
+    }
   }
 }

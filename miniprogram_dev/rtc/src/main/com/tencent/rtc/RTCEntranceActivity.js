@@ -41,11 +41,11 @@ export default class RTCEntranceActivity extends AppCompatActivity{
 })
         this.mInputRoomId.setText("s")
         var time = String.valueOf(System.currentTimeMillis())
-        var userId = time.substring(time.length() - 8)
-        mInputUserId.setText(userId)
+        var userId = time.substring(time.length - 8)
+        this.mInputUserId.setText(userId)
     }
     startEnterRoom(){
-        if(TextUtils.isEmpty(mInputUserId.getText().toString().trim()) || TextUtils.isEmpty(this.mInputRoomId.getText().toString().trim())){
+        if(TextUtils.isEmpty(this.mInputUserId.getText().toString().trim()) || TextUtils.isEmpty(this.mInputRoomId.getText().toString().trim())){
             Toast.makeText(this,this.getString(R.string.rtc_room_input_error_tip),Toast.LENGTH_LONG).show();
             return;
         }

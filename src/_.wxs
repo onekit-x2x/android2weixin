@@ -55,7 +55,7 @@ var _ = function (Rs,str,isDimension){
         return result
       case "drawable":
         var css = "";
-        switch(result.type){
+        switch(result.node){
           case "shape":
             switch(result.shape){
               case "rectangle":

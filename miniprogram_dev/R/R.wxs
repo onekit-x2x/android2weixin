@@ -21,7 +21,7 @@ module.exports = {
   },
   drawable:{
     button_bg:{
-        type:"shape",
+        node:"shape",
         shape:"rectangle",
         solid:{
             color:"@color/live_green_bg" 
