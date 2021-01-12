@@ -1,11 +1,23 @@
 {
   "pages": [
-    "pages/com/tencent/rtc/RTCEntranceActivity",
-    "pages/com/tencent/trtcsimpledemo/MainActivity",
-    "pages/com/tencent/custom/CustomEntranceActivity",
-    "pages/com/tencent/live/LiveRoomListActivity",
-    "pages/com/tencent/rtc/RTCActivity",
-    "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
+    "ages/com/tencent/trtcsimpledemo/MainActivity"
+  ],
+  "subpackages": [
+    {"root":"customcapture","independent":true,"pages":[
+      "pages/com/tencent/custom/CustomEntranceActivity"
+    ]},
+    {"root":"debug","independent":true,"pages":[
+    ]},
+    {"root":"live","independent":true,"pages":[
+      "pages/com/tencent/live/LiveRoomListActivity"
+    ]},
+    {"root":"rtc","independent":true,"pages":[
+      "pages/com/tencent/rtc/RTCEntranceActivity",
+      "pages/com/tencent/rtc/RTCActivity"
+    ]},
+    {"root":"screen","independent":true,"pages":[
+      "pages/com/tencent/liteav/screen/ScreenEntranceActivity"
+    ]}
   ],
   "usingComponents": {
     "onekit-Button":"/android2weixin/ui/Button/Button",

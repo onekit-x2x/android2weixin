@@ -1,0 +1,21 @@
+
+<onekit-RelativeLayout layout_width="match_parent" layout_height="match_parent" background="{{_('@color/live_main_bg')}}">
+
+<onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content">
+
+    <onekit-ImageView id="{{_('@+id/room_list_ic_back')}}" layout_width="wrap_content" layout_height="wrap_content" layout_marginLeft="10dp" layout_marginTop="15dp" background="{{_('@mipmap/live_ic_back')}}"></onekit-ImageView>
+
+    <onekit-TextView layout_width="match_parent" layout_height="40dp" layout_marginTop="15dp" gravity="center_horizontal" text="TRTC示例教程" textColor="{{_('@android:color/white')}}" textSize="20sp"></onekit-TextView>
+
+</onekit-LinearLayout>
+
+<onekit-TextView id="{{_('@+id/room_tip_textview')}}" layout_width="wrap_content" layout_height="wrap_content" layout_marginBottom="4dp" layout_marginLeft="60dp" layout_marginTop="68dp" singleLine="false" text="选择直播间点击进入" textAlignment="center" textColor="#AAAAAA"></onekit-TextView>
+
+
+<onekit-TextView id="{{_('@+id/room_tip_null_list_textview')}}" layout_width="wrap_content" layout_height="wrap_content" layout_centerInParent="true" singleLine="false" visibility="visible" text="当前没有进行中的直播\n请点击开始直播" textAlignment="center" textColor="#AAAAAA"></onekit-TextView>
+
+<onekit-ListView id="{{_('@+id/lv_room_list')}}" layout_width="match_parent" layout_height="match_parent" layout_below="{{_('@id/room_tip_textview')}}" layout_marginLeft="60dp" layout_marginRight="60dp" dividerHeight="18dp" layout_marginBottom="100dp"></onekit-ListView>
+
+<onekit-Button id="{{_('@+id/bt_enter_live')}}" layout_width="match_parent" layout_height="wrap_content" layout_alignParentBottom="true" layout_centerHorizontal="true" text="开始直播" background="{{_('@drawable/live_button_bg')}}" textColor="{{_('@android:color/white')}}" layout_margin="60dp"></onekit-Button>
+
+</onekit-RelativeLayout>

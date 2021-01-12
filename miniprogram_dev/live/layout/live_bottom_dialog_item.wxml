@@ -1,0 +1,11 @@
+
+<onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content" orientation="vertical" padding="8dp">
+
+<onekit-TextView id="{{_('@+id/txt_title')}}" layout_width="match_parent" layout_height="wrap_content" background="{{_('@mipmap/live_dialog_top_normal')}}" gravity="center" minHeight="45dp" paddingLeft="15dp" paddingTop="10dp" paddingRight="15dp" paddingBottom="10dp" textColor="{{_('@color/live_bottom_dialog_gray')}}" textSize="13sp" visibility="gone"></onekit-TextView>
+
+
+<onekit-LinearLayout id="{{_('@+id/ll_content')}}" layout_width="match_parent" layout_height="wrap_content" orientation="vertical"></onekit-LinearLayout>
+
+<onekit-TextView id="{{_('@+id/txt_cancel')}}" layout_width="match_parent" layout_height="45dp" layout_marginTop="8dp" background="{{_('@drawable/live_dialog_single_selector')}}" gravity="center" text="取消" textColor="{{_('@color/live_bottom_dialog_blue')}}" textSize="18sp" textStyle="bold"></onekit-TextView>
+
+</onekit-LinearLayout>
