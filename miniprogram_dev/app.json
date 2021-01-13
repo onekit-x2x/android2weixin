@@ -6,8 +6,6 @@
     {"root":"customcapture","pages":[
       "pages/com/tencent/custom/CustomEntranceActivity"
     ]},
-    {"root":"debug","pages":[
-    ]},
     {"root":"live","pages":[
       "pages/com/tencent/live/LiveRoomListActivity"
     ]},
