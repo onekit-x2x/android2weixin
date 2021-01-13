@@ -1,4 +1,4 @@
-module.export = {
+module.exports = {
  "com.tencent.custom.CustomEntranceActivity":"customcapture/",
  "com.tencent.liteav.screen.ScreenEntranceActivity":"screen/",
   "com.tencent.live.LiveRoomListActivity":"live/",
