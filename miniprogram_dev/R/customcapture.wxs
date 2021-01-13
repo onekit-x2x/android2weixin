@@ -28,7 +28,7 @@ module.exports = {
       node: "shape",
       shape: "rectangle",
       solid: {
-        color = "@color/custom_green_bg"
+        color: "@color/custom_green_bg"
       },
       corners: {
         bottomLeftRadius: "5dp",
@@ -49,10 +49,10 @@ module.exports = {
         topLeftRadius: "2dip",
         topRightRadius: "2dip"
       },
-    stroke: {
-      width: "5px",
-      color: "#FFFFFF"
-    }
+      stroke: {
+        width: "5px",
+        color: "#FFFFFF"
+      }
     }
   },
   mipmap:{

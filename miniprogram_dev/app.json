@@ -1,6 +1,6 @@
 {
   "pages": [
-    "ages/com/tencent/trtcsimpledemo/MainActivity"
+    "pages/com/tencent/trtcsimpledemo/MainActivity"
   ],
   "subpackages": [
     {"root":"customcapture","independent":true,"pages":[
