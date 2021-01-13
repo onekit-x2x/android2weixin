@@ -1,6 +1,5 @@
 
 <onekit-RelativeLayout layout_width="match_parent" layout_height="match_parent" onekit-id="{{_('@+id/rtc_entrance_main')}}" background="{{_('@color/rtc_main_bg')}}">
-
 <onekit-LinearLayout layout_width="match_parent" layout_height="wrap_content">
 
     <onekit-ImageView onekit-id="{{_('@+id/entrance_ic_back')}}" layout_width="wrap_content" layout_height="wrap_content" layout_marginLeft="10dp" layout_marginTop="15dp" background="{{_('@mipmap/rtc_ic_back')}}"></onekit-ImageView>

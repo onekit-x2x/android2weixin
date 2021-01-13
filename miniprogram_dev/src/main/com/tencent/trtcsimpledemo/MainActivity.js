@@ -11,7 +11,7 @@ const LiveRoomListActivity = {class:"com.tencent.live.LiveRoomListActivity"}
 const RTCEntranceActivity = {class:"com.tencent.rtc.RTCEntranceActivity"}
 export default class MainActivity extends AppCompatActivity{
     onCreate(savedInstanceState ){
-        super.onCreate(savedInstanceState)
+        /*super.onCreate(savedInstanceState)
         this.setContentView(R.layout.activity_main)
         this.getSupportActionBar().hide()
         new Handler().postDelayed({
@@ -20,10 +20,10 @@ export default class MainActivity extends AppCompatActivity{
     }
 },1000)
         this.findViewById(R.id.bt_rtc).setOnClickListener({
-    onClick:(view )=>{
+    onClick:(view )=>{*/
         var intent = new Intent(this,RTCEntranceActivity.class)
         this.startActivity(intent)
-    }
+    /*}
 })
         this.findViewById(R.id.bt_live).setOnClickListener({
     onClick(view ){
@@ -42,6 +42,6 @@ export default class MainActivity extends AppCompatActivity{
         var intent = new Intent(this,CustomEntranceActivity.class)
         this.startActivity(intent)
     }
-})
+})*/
     }
 }
