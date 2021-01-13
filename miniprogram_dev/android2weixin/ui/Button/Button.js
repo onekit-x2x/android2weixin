@@ -82,12 +82,11 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -97,12 +96,20 @@ var _onekit_behavior = __webpack_require__(1);
 
 var _onekit_behavior2 = _interopRequireDefault(_onekit_behavior);
 
+var _relativelayout_behavior = __webpack_require__(2);
+
+var _relativelayout_behavior2 = _interopRequireDefault(_relativelayout_behavior);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import relativelayout_behavior from './relativelayout_behavior'
+/* eslint-disable no-case-declarations */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable no-useless-computed-key */
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
 
 module.exports = Behavior({
-  behaviors: [_onekit_behavior2.default],
+  behaviors: [_onekit_behavior2.default, _relativelayout_behavior2.default],
   data: {},
   properties: {
     layout_width: {
@@ -235,7 +242,7 @@ module.exports = Behavior({
       } else if (dimension.endsWith('px')) {
         return dimension;
       } else {
-        throw new Error(dimension);
+        throw new Error('[dimension]', dimension);
       }
     },
     _getWidth: function _getWidth(size) {
@@ -312,6 +319,9 @@ module.exports = Behavior({
         return background;
       }
     },
+    _getAlignParentBottom: function _getAlignParentBottom(isAlign) {
+      return isAlign ? 'bottom:0px;' : '';
+    },
     ui_tap: function ui_tap() {
       if (this.clickListener) {
         this.clickListener.onClick(this);
@@ -341,15 +351,10 @@ module.exports = Behavior({
     },
     setVisibility: function setVisibility() {}
   }
-}); /* eslint-disable no-case-declarations */
-/* eslint-disable import/no-dynamic-require */
-/* eslint-disable no-useless-computed-key */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
+});
 
 /***/ }),
-
-/***/ 1:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -385,8 +390,54 @@ module.exports = Behavior({
 });
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 9:
+"use strict";
+
+
+/* eslint-disable no-case-declarations */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable no-useless-computed-key */
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
+
+module.exports = Behavior({
+  data: {},
+  properties: {
+    layout_alignParentBottom: {
+      type: Boolean,
+      value: false,
+      observer: function observer(newValue) {
+        var _setData;
+
+        this.setData((_setData = {}, _setData['alignParentBottom_'] = this._getAlignParentBottom(newValue), _setData));
+      }
+    }
+  },
+  lifetimes: {
+    attached: function attached() {
+      var _setData2;
+
+      this.setData((_setData2 = {}, _setData2['alignParentBottom_'] = this._getVisibility(this.properties.layout_alignParentBottom), _setData2));
+    }
+  },
+  methods: {
+    _getAlignParentBottom: function _getAlignParentBottom(isAlign) {
+      return isAlign ? 'bottom:0px;' : '';
+    }
+  }
+});
+
+/***/ }),
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -412,5 +463,4 @@ Component({
 }); /* eslint-disable camelcase */
 
 /***/ })
-
-/******/ });
+/******/ ]);

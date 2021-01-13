@@ -5,10 +5,10 @@
 /* eslint-disable camelcase */
 
 import onekit_behavior from './onekit_behavior'
-// import relativelayout_behavior from './relativelayout_behavior'
+import relativelayout_behavior from './relativelayout_behavior'
 
 module.exports = Behavior({
-  behaviors: [onekit_behavior],
+  behaviors: [onekit_behavior, relativelayout_behavior],
   data: {},
   properties: {
     layout_width: {
@@ -151,7 +151,7 @@ module.exports = Behavior({
       } else if (dimension.endsWith('px')) {
         return dimension
       } else {
-        throw new Error(dimension)
+        throw new Error('[dimension]', dimension)
       }
     },
     _getWidth(size) {
@@ -214,6 +214,9 @@ module.exports = Behavior({
       } else {
         return background
       }
+    },
+    _getAlignParentBottom(isAlign) {
+      return isAlign ? 'bottom:0px;' : ''
     },
     ui_tap() {
       if (this.clickListener) {

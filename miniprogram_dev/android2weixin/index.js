@@ -82,13 +82,14 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 17);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */,
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,7 +116,7 @@ var Bundle = function () {
 exports.default = Bundle;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -123,9 +124,9 @@ exports.default = Bundle;
 
 exports.__esModule = true;
 
-var _oneutil = __webpack_require__(21);
+var _oneutil = __webpack_require__(22);
 
-var _Any2 = __webpack_require__(4);
+var _Any2 = __webpack_require__(5);
 
 var _Any3 = _interopRequireDefault(_Any2);
 
@@ -173,7 +174,7 @@ var Activity = function (_Any) {
 exports.default = Activity;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -190,7 +191,7 @@ var Any = function Any() {
 exports.default = Any;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -198,7 +199,7 @@ exports.default = Any;
 
 exports.__esModule = true;
 
-var _ComponentActivity = __webpack_require__(6);
+var _ComponentActivity = __webpack_require__(7);
 
 var _ComponentActivity2 = _interopRequireDefault(_ComponentActivity);
 
@@ -225,7 +226,7 @@ var ComponentActivity = function (_androidx$core$app$Co) {
 exports.default = ComponentActivity;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -233,7 +234,7 @@ exports.default = ComponentActivity;
 
 exports.__esModule = true;
 
-var _Activity2 = __webpack_require__(3);
+var _Activity2 = __webpack_require__(4);
 
 var _Activity3 = _interopRequireDefault(_Activity2);
 
@@ -260,7 +261,7 @@ var ComponentActivity = function (_Activity) {
 exports.default = ComponentActivity;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -284,7 +285,7 @@ var ActionBar = function () {
 exports.default = ActionBar;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -292,7 +293,7 @@ exports.default = ActionBar;
 
 exports.__esModule = true;
 
-var _ComponentActivity2 = __webpack_require__(5);
+var _ComponentActivity2 = __webpack_require__(6);
 
 var _ComponentActivity3 = _interopRequireDefault(_ComponentActivity2);
 
@@ -319,24 +320,24 @@ var FragmentActivity = function (_ComponentActivity) {
 exports.default = FragmentActivity;
 
 /***/ }),
-/* 9 */,
 /* 10 */,
 /* 11 */,
 /* 12 */,
 /* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */
+/* 16 */,
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _OnekitPage = __webpack_require__(17);
+var _OnekitPage = __webpack_require__(18);
 
 var _OnekitPage2 = _interopRequireDefault(_OnekitPage);
 
-var _index = __webpack_require__(18);
+var _index = __webpack_require__(19);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -346,7 +347,7 @@ _index2.default.OnekitPage = _OnekitPage2.default;
 module.exports = _index2.default;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -381,28 +382,28 @@ exports.default = function (adr_activity) {
   Page(wx_object);
 };
 
-var _Bundle = __webpack_require__(2);
+var _Bundle = __webpack_require__(3);
 
 var _Bundle2 = _interopRequireDefault(_Bundle);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _index = __webpack_require__(19);
+var _index = __webpack_require__(20);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(34);
+var _index3 = __webpack_require__(35);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _index5 = __webpack_require__(43);
+var _index5 = __webpack_require__(44);
 
 var _index6 = _interopRequireDefault(_index5);
 
@@ -415,33 +416,33 @@ module.exports = {
 };
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(20);
+var _app = __webpack_require__(21);
 
 var _app2 = _interopRequireDefault(_app);
 
-var _content = __webpack_require__(22);
+var _content = __webpack_require__(23);
 
 var _content2 = _interopRequireDefault(_content);
 
-var _os = __webpack_require__(24);
+var _os = __webpack_require__(25);
 
 var _os2 = _interopRequireDefault(_os);
 
-var _text = __webpack_require__(26);
+var _text = __webpack_require__(27);
 
 var _text2 = _interopRequireDefault(_text);
 
-var _view = __webpack_require__(28);
+var _view = __webpack_require__(29);
 
 var _view2 = _interopRequireDefault(_view);
 
-var _widget = __webpack_require__(32);
+var _widget = __webpack_require__(33);
 
 var _widget2 = _interopRequireDefault(_widget);
 
@@ -452,13 +453,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Activity = __webpack_require__(3);
+var _Activity = __webpack_require__(4);
 
 var _Activity2 = _interopRequireDefault(_Activity);
 
@@ -469,19 +470,19 @@ module.exports = {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports = require("oneutil");
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Intent = __webpack_require__(23);
+var _Intent = __webpack_require__(24);
 
 var _Intent2 = _interopRequireDefault(_Intent);
 
@@ -492,7 +493,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -500,7 +501,7 @@ module.exports = {
 
 exports.__esModule = true;
 
-var _Bundle = __webpack_require__(2);
+var _Bundle = __webpack_require__(3);
 
 var _Bundle2 = _interopRequireDefault(_Bundle);
 
@@ -527,17 +528,17 @@ var Intent = function () {
 exports.default = Intent;
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Bundle = __webpack_require__(2);
+var _Bundle = __webpack_require__(3);
 
 var _Bundle2 = _interopRequireDefault(_Bundle);
 
-var _Handler = __webpack_require__(25);
+var _Handler = __webpack_require__(26);
 
 var _Handler2 = _interopRequireDefault(_Handler);
 
@@ -549,7 +550,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -577,13 +578,13 @@ var Handler = function () {
 exports.default = Handler;
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _TextUtils = __webpack_require__(27);
+var _TextUtils = __webpack_require__(28);
 
 var _TextUtils2 = _interopRequireDefault(_TextUtils);
 
@@ -594,7 +595,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -619,17 +620,17 @@ var TextUtils = function () {
 exports.default = TextUtils;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _inputmethod = __webpack_require__(29);
+var _inputmethod = __webpack_require__(30);
 
 var _inputmethod2 = _interopRequireDefault(_inputmethod);
 
-var _View = __webpack_require__(31);
+var _View = __webpack_require__(32);
 
 var _View2 = _interopRequireDefault(_View);
 
@@ -640,13 +641,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _InputMethodManager = __webpack_require__(30);
+var _InputMethodManager = __webpack_require__(31);
 
 var _InputMethodManager2 = _interopRequireDefault(_InputMethodManager);
 
@@ -657,14 +658,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -681,13 +682,13 @@ var View = function View() {
 exports.default = View;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _EditText = __webpack_require__(33);
+var _EditText = __webpack_require__(34);
 
 var _EditText2 = _interopRequireDefault(_EditText);
 
@@ -698,7 +699,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -715,25 +716,25 @@ var EditText = function EditText() {
 exports.default = EditText;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _activity = __webpack_require__(35);
+var _activity = __webpack_require__(36);
 
 var _activity2 = _interopRequireDefault(_activity);
 
-var _appcompat = __webpack_require__(36);
+var _appcompat = __webpack_require__(37);
 
 var _appcompat2 = _interopRequireDefault(_appcompat);
 
-var _core = __webpack_require__(39);
+var _core = __webpack_require__(40);
 
 var _core2 = _interopRequireDefault(_core);
 
-var _fragment = __webpack_require__(41);
+var _fragment = __webpack_require__(42);
 
 var _fragment2 = _interopRequireDefault(_fragment);
 
@@ -744,13 +745,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _ComponentActivity = __webpack_require__(5);
+var _ComponentActivity = __webpack_require__(6);
 
 var _ComponentActivity2 = _interopRequireDefault(_ComponentActivity);
 
@@ -761,13 +762,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(37);
+var _app = __webpack_require__(38);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -778,17 +779,17 @@ module.exports = {
 };
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _ActionBar = __webpack_require__(7);
+var _ActionBar = __webpack_require__(8);
 
 var _ActionBar2 = _interopRequireDefault(_ActionBar);
 
-var _AppCompatActivity = __webpack_require__(38);
+var _AppCompatActivity = __webpack_require__(39);
 
 var _AppCompatActivity2 = _interopRequireDefault(_AppCompatActivity);
 
@@ -800,7 +801,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -808,11 +809,11 @@ module.exports = {
 
 exports.__esModule = true;
 
-var _ActionBar = __webpack_require__(7);
+var _ActionBar = __webpack_require__(8);
 
 var _ActionBar2 = _interopRequireDefault(_ActionBar);
 
-var _FragmentActivity2 = __webpack_require__(8);
+var _FragmentActivity2 = __webpack_require__(9);
 
 var _FragmentActivity3 = _interopRequireDefault(_FragmentActivity2);
 
@@ -845,13 +846,13 @@ var AppCompatActivity = function (_FragmentActivity) {
 exports.default = AppCompatActivity;
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _app = __webpack_require__(40);
+var _app = __webpack_require__(41);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -860,24 +861,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = {
   app: _app2.default
 };
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.ComponentActivity = undefined;
-
-var _ComponentActivity = __webpack_require__(6);
-
-var _ComponentActivity2 = _interopRequireDefault(_ComponentActivity);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.ComponentActivity = _ComponentActivity2.default;
 
 /***/ }),
 /* 41 */
@@ -886,7 +869,25 @@ exports.ComponentActivity = _ComponentActivity2.default;
 "use strict";
 
 
-var _app = __webpack_require__(42);
+exports.__esModule = true;
+exports.ComponentActivity = undefined;
+
+var _ComponentActivity = __webpack_require__(7);
+
+var _ComponentActivity2 = _interopRequireDefault(_ComponentActivity);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.ComponentActivity = _ComponentActivity2.default;
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _app = __webpack_require__(43);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -897,13 +898,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _FragmentActivity = __webpack_require__(8);
+var _FragmentActivity = __webpack_require__(9);
 
 var _FragmentActivity2 = _interopRequireDefault(_FragmentActivity);
 
@@ -914,13 +915,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _index = __webpack_require__(44);
+var _index = __webpack_require__(45);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -929,21 +930,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = { lang: _index2.default };
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _Any = __webpack_require__(4);
+var _Any = __webpack_require__(5);
 
 var _Any2 = _interopRequireDefault(_Any);
 
-var _System = __webpack_require__(45);
+var _System = __webpack_require__(46);
 
 var _System2 = _interopRequireDefault(_System);
 
-var _String = __webpack_require__(46);
+var _String = __webpack_require__(47);
 
 var _String2 = _interopRequireDefault(_String);
 
@@ -953,7 +954,7 @@ module.exports = { Any: _Any2.default, System: _System2.default };
 // eslint-disable-next-line no-unused-vars
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -980,7 +981,7 @@ var System = function () {
 exports.default = System;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

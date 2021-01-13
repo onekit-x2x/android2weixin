@@ -8,8 +8,8 @@ module.exports = Behavior({
   data: {
   },
   properties: {
-    layout_width: {
-      layout_alignParentBottom: Boolean,
+    layout_alignParentBottom: {
+      type: Boolean,
       value: false,
       observer(newValue) {
         this.setData({
