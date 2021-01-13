@@ -21,7 +21,7 @@ module.exports = Behavior({
   lifetimes: {
     attached() {
       this.setData({
-        ['alignParentBottom_']: this._getVisibility(this.properties.layout_alignParentBottom),
+        ['alignParentBottom_']: this._getAlignParentBottom(this.properties.layout_alignParentBottom),
       })
     },
   },

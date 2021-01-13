@@ -449,7 +449,7 @@ module.exports = Behavior({
     attached: function attached() {
       var _setData2;
 
-      this.setData((_setData2 = {}, _setData2['alignParentBottom_'] = this._getVisibility(this.properties.layout_alignParentBottom), _setData2));
+      this.setData((_setData2 = {}, _setData2['alignParentBottom_'] = this._getAlignParentBottom(this.properties.layout_alignParentBottom), _setData2));
     }
   },
   methods: {

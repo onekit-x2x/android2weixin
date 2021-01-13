@@ -8,11 +8,7 @@ page,view,button,text {
 page>view{
   width:100%;
 }
-page:before,view:before,button:before,text:before{
-    content: '';
-    display:table;
-}
-.onekit-LinearLayout{position:static;}
+.onekit-LinearLayout{dlsipay:flex;}
 .onekit-RelativeLayout{position:absolute;}
 .onekit-Button{
     padding:15rpx;
