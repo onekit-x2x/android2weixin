@@ -98,9 +98,19 @@ exports.__esModule = true;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Bundle = function Bundle() {
-  _classCallCheck(this, Bundle);
-};
+var Bundle = function () {
+  function Bundle() {
+    _classCallCheck(this, Bundle);
+
+    this._data = {};
+  }
+
+  Bundle.prototype.putExtra = function putExtra(key, value) {
+    this._data[key] = value;
+  };
+
+  return Bundle;
+}();
 
 exports.default = Bundle;
 
@@ -490,15 +500,29 @@ module.exports = {
 
 exports.__esModule = true;
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _Bundle = __webpack_require__(2);
 
-/* eslint-disable no-console */
-var Intent = function Intent(currentActivity, newActivityClass) {
-  _classCallCheck(this, Intent);
+var _Bundle2 = _interopRequireDefault(_Bundle);
 
-  this._currentActivity = currentActivity;
-  this._newActivityClass = newActivityClass;
-};
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /* eslint-disable no-console */
+
+var Intent = function () {
+  function Intent(currentActivity, newActivityClass) {
+    _classCallCheck(this, Intent);
+
+    this._currentActivity = currentActivity;
+    this._newActivityClass = newActivityClass;
+    this._bundle = new _Bundle2.default();
+  }
+
+  Intent.prototype.putExtra = function putExtra(key, value) {
+    this._bundle.putExtra(key, value);
+  };
+
+  return Intent;
+}();
 
 exports.default = Intent;
 
@@ -580,9 +604,17 @@ exports.__esModule = true;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var TextUtils = function TextUtils() {
-  _classCallCheck(this, TextUtils);
-};
+var TextUtils = function () {
+  function TextUtils() {
+    _classCallCheck(this, TextUtils);
+  }
+
+  TextUtils.isEmpty = function isEmpty(str) {
+    return str == null || str === '';
+  };
+
+  return TextUtils;
+}();
 
 exports.default = TextUtils;
 

@@ -25,17 +25,17 @@ export default class RTCEntranceActivity extends AppCompatActivity{
         this.mInputUserId = this.findViewById(R.id.et_input_username)
         this.mInputRoomId = this.findViewById(R.id.et_input_room_id)
         this.findViewById(R.id.bt_enter_room).setOnClickListener({
-    onClick(view ){
+    onClick:(view )=>{
         this.startEnterRoom()
     }
 })
         this.findViewById(R.id.rtc_entrance_main).setOnClickListener({
-    onClick(v ){
+    onClick:(v )=>{
         this.hideInput()
     }
 })
         this.findViewById(R.id.entrance_ic_back).setOnClickListener({
-    onClick(v ){
+    onClick:(v )=>{
         this.finish()
     }
 })
@@ -50,7 +50,7 @@ export default class RTCEntranceActivity extends AppCompatActivity{
             return;
         }
         var intent = new Intent(this,RTCActivity.class)
-        intent.putExtra(Constant.ROOM_ID,this.getText().toString().trim())
+        intent.putExtra(Constant.ROOM_ID,this.mInputRoomId.getText().toString().trim())
         intent.putExtra(Constant.USER_ID,this.mInputUserId.getText().toString().trim())
         this.startActivity(intent)
     }
