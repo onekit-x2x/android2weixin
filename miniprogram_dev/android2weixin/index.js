@@ -151,7 +151,7 @@ var Activity = function (_Any) {
   };
 
   Activity.prototype.startActivity = function startActivity(intent) {
-    var url = '/pages/' + _oneutil.STRING.replace(intent._newActivityClass, '.', '/');
+    var url = getApp().onekit_page_package[intent._newActivityClass] + 'pages/' + _oneutil.STRING.replace(intent._newActivityClass, '.', '/');
     console.log(url);
     wx.navigateTo({
       url: url

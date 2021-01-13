@@ -1,11 +1,6 @@
+import page_package from './page_package'
 App({
     onLaunch: function () {
-        console.log('App Launch')
-    },
-    onShow: function () {
-        console.log('App Show')
-    },
-    onHide: function () {
-        console.log('App Hide')
-    },
+        this.onekit_page_package = page_package
+    }
 });

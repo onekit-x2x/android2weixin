@@ -19,7 +19,7 @@ export default class Activity extends Any {
   }
 
   startActivity(intent) {
-    const url = '/pages/' + STRING.replace(intent._newActivityClass, '.', '/')
+    const url = getApp().onekit_page_package[intent._newActivityClass] + 'pages/' + STRING.replace(intent._newActivityClass, '.', '/')
     console.log(url)
     wx.navigateTo({
       url
