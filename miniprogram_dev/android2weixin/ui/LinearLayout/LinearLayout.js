@@ -99,6 +99,8 @@ var _onekit_behavior2 = _interopRequireDefault(_onekit_behavior);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import relativelayout_behavior from './relativelayout_behavior'
+
 module.exports = Behavior({
   behaviors: [_onekit_behavior2.default],
   data: {},
@@ -194,10 +196,12 @@ module.exports = Behavior({
       }
     },
     text: {
-      type: String, value: ''
+      type: String,
+      value: ''
     },
     textColor: {
-      type: String, value: ''
+      type: String,
+      value: ''
     },
     textSize: {
       type: String,

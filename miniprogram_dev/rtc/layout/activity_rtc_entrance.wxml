@@ -24,7 +24,6 @@
     <onekit-EditText onekit-id="{{_('@+id/et_input_username')}}" layout_width="match_parent" layout_height="34dp" layout_marginTop="5dp" background="{{_('@drawable/rtc_edit_bg')}}"></onekit-EditText>
 
 </onekit-LinearLayout>
-
 <onekit-Button onekit-id="{{_('@+id/bt_enter_room')}}" layout_width="match_parent" layout_height="wrap_content" layout_alignParentBottom="true" layout_centerHorizontal="true" background="{{_('@drawable/rtc_button_bg')}}" textColor="{{_('@android:color/white')}}" layout_margin="60dp" text="进入房间"></onekit-Button>
 
 </onekit-RelativeLayout>

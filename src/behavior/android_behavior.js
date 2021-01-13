@@ -5,6 +5,7 @@
 /* eslint-disable camelcase */
 
 import onekit_behavior from './onekit_behavior'
+// import relativelayout_behavior from './relativelayout_behavior'
 
 module.exports = Behavior({
   behaviors: [onekit_behavior],
@@ -14,62 +15,80 @@ module.exports = Behavior({
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['width_']: this._getWidth(newValue)})
+        this.setData({
+          ['width_']: this._getWidth(newValue)
+        })
       }
     },
     layout_height: {
       type: String,
       value: 'match_parent',
       observer(newValue) {
-        this.setData({['height_']: this._getHeight(newValue)})
+        this.setData({
+          ['height_']: this._getHeight(newValue)
+        })
       }
     },
     layout_margin: {
       type: String,
       value: 'inherit',
       observer(newValue) {
-        this.setData({['layout_margin_']: this._getDimension(newValue)})
+        this.setData({
+          ['layout_margin_']: this._getDimension(newValue)
+        })
       }
     },
     layout_marginLeft: {
       type: String,
       value: 'auto',
       observer(newValue) {
-        this.setData({['layout_marginLeft_']: this._getDimension(newValue)})
+        this.setData({
+          ['layout_marginLeft_']: this._getDimension(newValue)
+        })
       }
     },
     layout_marginRight: {
       type: String,
       value: 'auto',
       observer(newValue) {
-        this.setData({['layout_marginRight_']: this._getDimension(newValue)})
+        this.setData({
+          ['layout_marginRight_']: this._getDimension(newValue)
+        })
       }
     },
     layout_marginTop: {
       type: String,
       value: 'auto',
       observer(newValue) {
-        this.setData({['layout_marginTop_']: this._getDimension(newValue)})
+        this.setData({
+          ['layout_marginTop_']: this._getDimension(newValue)
+        })
       }
     },
     layout_marginBottom: {
       type: String,
       value: 'auto',
       observer(newValue) {
-        this.setData({['layout_marginBottom_']: this._getDimension(newValue)})
+        this.setData({
+          ['layout_marginBottom_']: this._getDimension(newValue)
+        })
       }
     },
     visibility: {
       type: String,
       value: 'visible',
       observer(newValue) {
-        this.setData({['visibility_']: this._getVisibility(newValue)})
+        this.setData({
+          ['visibility_']: this._getVisibility(newValue)
+        })
       }
     },
     gravity: {
       type: String,
       observer(newValue) {
-        this.setData({['gravity_']: this._getGravity(newValue)})
+        this.setData({
+          ['gravity_']: this._getGravity(newValue)
+        })
       }
     },
     background: {
@@ -77,21 +96,27 @@ module.exports = Behavior({
       value: 'transparent',
       observer(newValue) {
         const background_ = this._getBackground(newValue)
-        this.setData({['background_']: background_})
+        this.setData({
+          ['background_']: background_
+        })
       }
     },
     text: {
-      type: String, value: ''
+      type: String,
+      value: ''
     },
     textColor: {
-      type: String, value: ''
+      type: String,
+      value: ''
     },
     textSize: {
       type: String,
       value: '14sp',
       observer(newValue) {
         const textSize_ = this._getDimension(newValue)
-        this.setData({['textSize_']: textSize_})
+        this.setData({
+          ['textSize_']: textSize_
+        })
       }
     }
   },
@@ -217,7 +242,6 @@ module.exports = Behavior({
     setOnClickListener(clickListener) {
       this.clickListener = clickListener
     },
-    setVisibility() {
-    }
+    setVisibility() {}
   },
 })

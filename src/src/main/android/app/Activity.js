@@ -1,7 +1,9 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-console */
 /* eslint-disable class-methods-use-this */
-import {STRING} from 'oneutil'
+import {
+  STRING
+} from 'oneutil'
 import Any from '../../java/lang/Any'
 
 export default class Activity extends Any {

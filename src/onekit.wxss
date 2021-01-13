@@ -5,10 +5,15 @@ page,view,button,text {
     box-sizing: border-box;
     display: block;
 }
+page>view{
+  width:100%;
+}
 page:before,view:before,button:before,text:before{
     content: '';
     display:table;
 }
-.onekit-button{
+.onekit-LinearLayout{position:static;}
+.onekit-RelativeLayout{position:absolute;}
+.onekit-Button{
     padding:15rpx;
 }
