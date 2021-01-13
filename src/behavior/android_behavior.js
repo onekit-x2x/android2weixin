@@ -34,43 +34,43 @@ module.exports = Behavior({
       value: 'inherit',
       observer(newValue) {
         this.setData({
-          ['layout_margin_']: this._getDimension(newValue)
+          ['layout_margin_']: this._getMargin(newValue)
         })
       }
     },
     layout_marginLeft: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer(newValue) {
         this.setData({
-          ['layout_marginLeft_']: this._getDimension(newValue)
+          ['layout_marginLeft_']: this._getMarginLeft(newValue)
         })
       }
     },
     layout_marginRight: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer(newValue) {
         this.setData({
-          ['layout_marginRight_']: this._getDimension(newValue)
+          ['layout_marginRight_']: this._getMarginRight(newValue)
         })
       }
     },
     layout_marginTop: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer(newValue) {
         this.setData({
-          ['layout_marginTop_']: this._getDimension(newValue)
+          ['layout_marginTop_']: this._getMarginTop(newValue)
         })
       }
     },
     layout_marginBottom: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer(newValue) {
         this.setData({
-          ['layout_marginBottom_']: this._getDimension(newValue)
+          ['layout_marginBottom_']: this._getMargin(newValue)
         })
       }
     },
@@ -128,11 +128,11 @@ module.exports = Behavior({
         ['width_']: this._getWidth(this.properties.layout_width),
         ['height_']: this._getHeight(this.properties.layout_height),
         ['textSize_']: this._getDimension(this.properties.textSize),
-        ['layout_margin_']: this._getDimension(this.properties.layout_margin),
-        ['layout_marginTop_']: this._getDimension(this.properties.layout_marginTop),
-        ['layout_marginBottom_']: this._getDimension(this.properties.layout_marginBottom),
-        ['layout_marginLeft_']: this._getDimension(this.properties.layout_marginLeft),
-        ['layout_marginRight_']: this._getDimension(this.properties.layout_marginRight),
+        ['layout_margin_']: this._getMargin(this.properties.layout_margin),
+        ['layout_marginTop_']: this._getMarginTop(this.properties.layout_marginTop),
+        ['layout_marginBottom_']: this._getMarginBottom(this.properties.layout_marginBottom),
+        ['layout_marginLeft_']: this._getMarginLeft(this.properties.layout_marginLeft),
+        ['layout_marginRight_']: this._getMarginRight(this.properties.layout_marginRight),
         ['background_']: this._getBackground(this.properties.background)
       })
     },
@@ -153,6 +153,24 @@ module.exports = Behavior({
       } else {
         throw new Error('[dimension]', dimension)
       }
+    },
+    _getMargin(dimension) {
+      return this._getMarginTop(dimension) +
+        this._getMarginBottom(dimension) +
+        this._getMarginRight(dimension) +
+        this._getMarginLeft(dimension)
+    },
+    _getMarginTop(dimension) {
+      return `margin-top:${this._getDimension(dimension)};`
+    },
+    _getMarginRight(dimension) {
+      return `margin-right:${this._getDimension(dimension)};`
+    },
+    _getMarginBottom(dimension) {
+      return `margin-bottom:${this._getDimension(dimension)};`
+    },
+    _getMarginLeft(dimension) {
+      return `margin-left:${this._getDimension(dimension)};`
     },
     _getWidth(size) {
       switch (size) {
@@ -216,7 +234,7 @@ module.exports = Behavior({
       }
     },
     _getAlignParentBottom(isAlign) {
-      return isAlign ? 'bottom:0px;' : ''
+      return isAlign ? 'margin-bottom:0px;' : ''
     },
     ui_tap() {
       if (this.clickListener) {

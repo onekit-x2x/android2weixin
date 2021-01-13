@@ -1,4 +1,4 @@
 <input id="{{onekitId}}" class="onekit-EditText"
     bindtap="ui_tap"
-    style="{{visibility_}}{{gravity_}}{{width_}};{{height_}};background:{{background_}};margin:{{layout_marginTop_}} {{layout_marginRight_}} {{layout_marginBottom_}} {{layout_marginLeft_}};margin:{{layout_margin_}};color:{{textColor}};font-size:{{textSize_}}"
+    style="{{visibility_}}{{gravity_}}{{width_}};{{height_}};background:{{background_}};{{layout_marginTop_}}{{layout_marginRight_}}{{layout_marginBottom_}}{{layout_marginLeft_}}{{layout_margin_}}color:{{textColor}};font-size:{{textSize_}}"
     >{{text}}</input>

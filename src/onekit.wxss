@@ -1,15 +1,16 @@
 page {
     height:100%;
 }
-page,view,button,text {
-    box-sizing: border-box;
-    display: block;
-}
 page>view{
   width:100%;
 }
-.onekit-LinearLayout{dlsipay:flex;}
-.onekit-RelativeLayout{position:absolute;}
+page,view,button,text {
+    box-sizing: border-box;
+    display:block;
+    position: static;
+}
+.onekit-LinearLayout{dlsipay:flex !important;}
+.onekit-RelativeLayout{dlsipay:block !important;}
 .onekit-Button{
     padding:15rpx;
 }

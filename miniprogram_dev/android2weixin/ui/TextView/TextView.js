@@ -137,43 +137,43 @@ module.exports = Behavior({
       observer: function observer(newValue) {
         var _setData3;
 
-        this.setData((_setData3 = {}, _setData3['layout_margin_'] = this._getDimension(newValue), _setData3));
+        this.setData((_setData3 = {}, _setData3['layout_margin_'] = this._getMargin(newValue), _setData3));
       }
     },
     layout_marginLeft: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer: function observer(newValue) {
         var _setData4;
 
-        this.setData((_setData4 = {}, _setData4['layout_marginLeft_'] = this._getDimension(newValue), _setData4));
+        this.setData((_setData4 = {}, _setData4['layout_marginLeft_'] = this._getMarginLeft(newValue), _setData4));
       }
     },
     layout_marginRight: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer: function observer(newValue) {
         var _setData5;
 
-        this.setData((_setData5 = {}, _setData5['layout_marginRight_'] = this._getDimension(newValue), _setData5));
+        this.setData((_setData5 = {}, _setData5['layout_marginRight_'] = this._getMarginRight(newValue), _setData5));
       }
     },
     layout_marginTop: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer: function observer(newValue) {
         var _setData6;
 
-        this.setData((_setData6 = {}, _setData6['layout_marginTop_'] = this._getDimension(newValue), _setData6));
+        this.setData((_setData6 = {}, _setData6['layout_marginTop_'] = this._getMarginTop(newValue), _setData6));
       }
     },
     layout_marginBottom: {
       type: String,
-      value: 'auto',
+      value: '0px',
       observer: function observer(newValue) {
         var _setData7;
 
-        this.setData((_setData7 = {}, _setData7['layout_marginBottom_'] = this._getDimension(newValue), _setData7));
+        this.setData((_setData7 = {}, _setData7['layout_marginBottom_'] = this._getMargin(newValue), _setData7));
       }
     },
     visibility: {
@@ -226,7 +226,7 @@ module.exports = Behavior({
     attached: function attached() {
       var _setData12;
 
-      this.setData((_setData12 = {}, _setData12['visibility_'] = this._getVisibility(this.properties.visibility), _setData12['gravity_'] = this._getGravity(this.properties.gravity), _setData12['width_'] = this._getWidth(this.properties.layout_width), _setData12['height_'] = this._getHeight(this.properties.layout_height), _setData12['textSize_'] = this._getDimension(this.properties.textSize), _setData12['layout_margin_'] = this._getDimension(this.properties.layout_margin), _setData12['layout_marginTop_'] = this._getDimension(this.properties.layout_marginTop), _setData12['layout_marginBottom_'] = this._getDimension(this.properties.layout_marginBottom), _setData12['layout_marginLeft_'] = this._getDimension(this.properties.layout_marginLeft), _setData12['layout_marginRight_'] = this._getDimension(this.properties.layout_marginRight), _setData12['background_'] = this._getBackground(this.properties.background), _setData12));
+      this.setData((_setData12 = {}, _setData12['visibility_'] = this._getVisibility(this.properties.visibility), _setData12['gravity_'] = this._getGravity(this.properties.gravity), _setData12['width_'] = this._getWidth(this.properties.layout_width), _setData12['height_'] = this._getHeight(this.properties.layout_height), _setData12['textSize_'] = this._getDimension(this.properties.textSize), _setData12['layout_margin_'] = this._getMargin(this.properties.layout_margin), _setData12['layout_marginTop_'] = this._getMarginTop(this.properties.layout_marginTop), _setData12['layout_marginBottom_'] = this._getMarginBottom(this.properties.layout_marginBottom), _setData12['layout_marginLeft_'] = this._getMarginLeft(this.properties.layout_marginLeft), _setData12['layout_marginRight_'] = this._getMarginRight(this.properties.layout_marginRight), _setData12['background_'] = this._getBackground(this.properties.background), _setData12));
     }
   },
   methods: {
@@ -245,6 +245,21 @@ module.exports = Behavior({
       } else {
         throw new Error('[dimension]', dimension);
       }
+    },
+    _getMargin: function _getMargin(dimension) {
+      return this._getMarginTop(dimension) + this._getMarginBottom(dimension) + this._getMarginRight(dimension) + this._getMarginLeft(dimension);
+    },
+    _getMarginTop: function _getMarginTop(dimension) {
+      return 'margin-top:' + this._getDimension(dimension) + ';';
+    },
+    _getMarginRight: function _getMarginRight(dimension) {
+      return 'margin-right:' + this._getDimension(dimension) + ';';
+    },
+    _getMarginBottom: function _getMarginBottom(dimension) {
+      return 'margin-bottom:' + this._getDimension(dimension) + ';';
+    },
+    _getMarginLeft: function _getMarginLeft(dimension) {
+      return 'margin-left:' + this._getDimension(dimension) + ';';
     },
     _getWidth: function _getWidth(size) {
       switch (size) {
@@ -321,7 +336,7 @@ module.exports = Behavior({
       }
     },
     _getAlignParentBottom: function _getAlignParentBottom(isAlign) {
-      return isAlign ? 'bottom:0px;' : '';
+      return isAlign ? 'margin-bottom:0px;' : '';
     },
     ui_tap: function ui_tap() {
       if (this.clickListener) {
@@ -436,6 +451,7 @@ Component({
 "use strict";
 
 
+/* eslint-disable max-len */
 /* eslint-disable no-case-declarations */
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable no-useless-computed-key */
@@ -445,28 +461,41 @@ Component({
 module.exports = Behavior({
   data: {},
   properties: {
+    layout_alignParentTop: {
+      type: Boolean,
+      value: false
+    },
     layout_alignParentBottom: {
       type: Boolean,
-      value: false,
-      observer: function observer(newValue) {
-        var _setData;
-
-        this.setData((_setData = {}, _setData['alignParentBottom_'] = this._getAlignParentBottom(newValue), _setData));
-      }
-    }
-  },
-  lifetimes: {
-    attached: function attached() {
-      var _setData2;
-
-      this.setData((_setData2 = {}, _setData2['alignParentBottom_'] = this._getAlignParentBottom(this.properties.layout_alignParentBottom), _setData2));
+      value: false
+    },
+    layout_alignParentLeft: {
+      type: Boolean,
+      value: false
+    },
+    layout_alignParentRight: {
+      type: Boolean,
+      value: false
     }
   },
   methods: {
-    _getAlignParentBottom: function _getAlignParentBottom(isAlign) {
-      return isAlign ? 'bottom:0px;' : '';
+    /* _getAlignParentTop(isAlign) {
+    if (isAlign) {
+      return `position:absolute !important;top:${this.properties.layout_marginTop)};`
+    } else {
+      return ''
     }
+    },
+    _getAlignParentBottom(isAlign) {
+    if (isAlign) {
+          return `position:absolute !important;bottom:${this._getDimension(this.properties.layout_marginBottom)};`
+    } else {
+      return ''
+    }
+    },
+    */
   }
+
 });
 
 /***/ })
