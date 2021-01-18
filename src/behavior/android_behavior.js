@@ -31,7 +31,7 @@ module.exports = Behavior({
     },
     layout_margin: {
       type: String,
-      value: 'inherit',
+      value: '',
       observer(newValue) {
         this.setData({
           ['layout_margin_']: this._getMargin(newValue)
