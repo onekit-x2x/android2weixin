@@ -132,7 +132,7 @@ module.exports = Behavior({
     },
     layout_margin: {
       type: String,
-      value: 'inherit',
+      value: '',
       observer: function observer(newValue) {
         var _setData3;
 

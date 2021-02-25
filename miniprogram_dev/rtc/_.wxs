@@ -1,6 +1,0 @@
-var Rs = [require("../R/rtc.wxs")
-]
-var _ = require("../android2weixin/_.wxs")
-module.exports = function (str,isDimension){
-  return _(Rs,str,isDimension)
-}
